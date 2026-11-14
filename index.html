@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Faustino Larroucau — DJ & Producer</title>
+<meta name="description" content="Faustino Larroucau, DJ y productor argentino de Melodic House. San Nicolás de los Arroyos. Temas, sets, rider y booking.">
+<meta property="og:title" content="Faustino Larroucau — DJ & Producer">
+<meta property="og:description" content="Tocar con el alma. Melodic House · Deep House · Progressive House · Indie Dance · Techno.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307080a'/%3E%3Cpath d='M14 26V14h12M50 38v12H38' fill='none' stroke='%23efc0d0' stroke-width='3'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Georgia' font-weight='400' font-size='22' fill='%23fff'%3EFL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Figtree:wght@300;400;500&family=Martian+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080a;--bg2:#0d0f12;--tx:#ecebe6;--mut:#8a8f95;--ac:#6bffb8;--line:rgba(236,235,230,.14);
+  --ft:'Big Shoulders Display','Arial Narrow',sans-serif;
+  --fb:'Schibsted Grotesk',system-ui,sans-serif;
+  --fm:'Martian Mono',ui-monospace,monospace;
+  --gut:clamp(18px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg);color-scheme:dark}
+body{background:var(--bg);color:var(--tx);font-family:var(--fb);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ol,ul{list-style:none}
+::selection{background:var(--ac);color:#000}
+.mono{font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.wrap{padding:0 var(--gut)}
+section{position:relative}
+
+/* grano */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* marcos viewfinder (eco del logo) */
+.br{position:relative}
+.br::before,.br::after{content:"";position:absolute;width:var(--bs,20px);height:var(--bs,20px);border:2px solid var(--ac);pointer-events:none;transition:width .35s,height .35s;z-index:3}
+.br::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.br::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.br:hover{--bs:34px}
+
+/* cursor que enfoca */
+.focus{position:fixed;left:0;top:0;width:30px;height:30px;pointer-events:none;z-index:100;opacity:0;transition:opacity .3s;
+  --c:var(--ac);
+  background:
+   linear-gradient(var(--c),var(--c)) 0 0/10px 2px no-repeat,linear-gradient(var(--c),var(--c)) 0 0/2px 10px no-repeat,
+   linear-gradient(var(--c),var(--c)) 100% 0/10px 2px no-repeat,linear-gradient(var(--c),var(--c)) 100% 0/2px 10px no-repeat,
+   linear-gradient(var(--c),var(--c)) 0 100%/10px 2px no-repeat,linear-gradient(var(--c),var(--c)) 0 100%/2px 10px no-repeat,
+   linear-gradient(var(--c),var(--c)) 100% 100%/10px 2px no-repeat,linear-gradient(var(--c),var(--c)) 100% 100%/2px 10px no-repeat}
+.focus.on{opacity:1}
+@media (hover:none),(pointer:coarse){.focus{display:none}}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:16px var(--gut);mix-blend-mode:normal;transition:background .3s,backdrop-filter .3s}
+.nav.solid{background:rgba(7,8,10,.72);backdrop-filter:blur(12px)}
+.nav .lg{height:34px;width:auto}
+.nav ul{display:flex;gap:30px}
+.nav ul a{font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);transition:color .2s}
+.nav ul a:hover{color:var(--ac)}
+.nav .right{display:flex;gap:14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--fm);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:14px 22px;border:1px solid var(--tx);transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--tx);color:#000}
+.btn.pri{background:var(--ac);border-color:var(--ac);color:#000}
+.btn.pri:hover{background:var(--tx);border-color:var(--tx)}
+.burger{display:none;font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:10px 14px;border:1px solid var(--line)}
+.menu{position:fixed;inset:0;z-index:55;background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:0 var(--gut);gap:6px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.menu.open{transform:none}
+.menu a{font-family:var(--ft);font-weight:900;font-size:clamp(48px,14vw,96px);line-height:1;text-transform:uppercase;display:flex;gap:16px;align-items:baseline}
+.menu a small{font-family:var(--fm);font-size:11px;color:var(--ac);font-weight:400}
+@media (max-width:860px){.nav ul,.nav .btn{display:none}.burger{display:block}}
+
+/* marquee géneros */
+.mq{border-block:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--bg)}
+.mq .tr{display:flex;width:max-content;animation:mq 38s linear infinite}
+.mq span{font-family:var(--ft);font-weight:900;font-size:clamp(34px,6vw,72px);text-transform:uppercase;line-height:1;padding:0 26px;white-space:nowrap;display:flex;align-items:center;gap:52px}
+.mq span::after{content:"";width:14px;height:14px;border:2px solid var(--ac);border-right:0;border-bottom:0;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* títulos */
+.sec{padding:clamp(80px,12vw,160px) 0}
+.kick{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.kick b{color:var(--ac);font-weight:500}
+.kick::after{content:"";height:1px;width:60px;background:var(--line)}
+h2{font-family:var(--ft);font-weight:900;text-transform:uppercase;line-height:.88;font-size:clamp(56px,10.5vw,170px);letter-spacing:-.005em}
+h2 em{font-style:normal;color:var(--ac)}
+.rv{opacity:1}
+html.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+html.js .rv.in{opacity:1;transform:none}
+
+/* SOBRE MI */
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(30px,6vw,100px);margin-top:50px;align-items:start}
+.about .pic{position:sticky;top:90px;aspect-ratio:4/5;overflow:hidden}
+.about .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.about .pic .c{opacity:0;transition:opacity 1.8s ease}
+.about .pic.on .c{opacity:1}
+.about .pic .cap{position:absolute;left:14px;bottom:12px;z-index:2;color:#fff;text-shadow:0 1px 8px #000}
+.about p{margin-bottom:1.15em;color:#cfcec9;max-width:60ch}
+.about p.lead{font-size:clamp(20px,2.2vw,26px);color:var(--tx);line-height:1.4}
+.tl{margin:38px 0 8px;border-top:1px solid var(--line)}
+.tl li{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);transition:padding .35s,background .35s}
+.tl li:hover{padding-left:14px;background:linear-gradient(90deg,rgba(107,255,184,.07),transparent)}
+.tl .y{font-family:var(--ft);font-weight:900;font-size:44px;line-height:1;color:var(--ac)}
+.tl .d{color:#cfcec9;font-size:16px}
+.quote{margin-top:clamp(60px,9vw,120px);font-family:var(--ft);font-weight:700;text-transform:uppercase;font-size:clamp(30px,5vw,72px);line-height:.98;max-width:21ch}
+.quote em{font-style:normal;color:var(--ac)}
+@media (max-width:860px){.about{grid-template-columns:1fr}.about .pic{position:relative;top:0;aspect-ratio:1/1.05}}
+
+/* nombres */
+.names{margin-top:clamp(60px,9vw,120px);border-block:1px solid var(--line);padding:26px 0;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.names .row{display:flex;width:max-content;gap:12px;animation:mq 60s linear infinite}
+.names .row.r{animation-direction:reverse;animation-duration:70s}
+.names:hover .row{animation-play-state:paused}
+.names b{font-family:var(--ft);font-weight:500;font-size:clamp(22px,3vw,34px);text-transform:uppercase;padding:6px 20px;border:1px solid var(--line);white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.names b:hover{background:var(--ac);color:#000;border-color:var(--ac)}
+.names .lbl{padding:0 var(--gut) 8px}
+
+/* MUSICA */
+.music{background:var(--bg2);border-block:1px solid var(--line)}
+.player{margin-top:50px;border:1px solid var(--line);background:#090a0d;padding:clamp(18px,3vw,36px)}
+.np{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(16px,3vw,34px);align-items:center}
+.cover{position:relative;width:clamp(92px,13vw,168px);aspect-ratio:1;background:#14171b;overflow:hidden;display:grid;place-items:center}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover .ph{width:52%;opacity:.5}
+.np h3{font-family:var(--ft);font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(30px,5vw,68px);margin:8px 0 6px}
+.np .sub{color:var(--mut);font-size:15px}
+.ctrl{display:flex;align-items:center;gap:10px}
+.ctrl button{width:46px;height:46px;display:grid;place-items:center;border:1px solid var(--line);transition:border-color .2s,color .2s}
+.ctrl button:hover{border-color:var(--ac);color:var(--ac)}
+.ctrl .play{width:70px;height:70px;background:var(--ac);border-color:var(--ac);color:#000}
+.ctrl .play:hover{background:var(--tx);color:#000;border-color:var(--tx)}
+.ctrl svg{width:20px;height:20px;fill:currentColor}
+.wave{position:relative;margin-top:26px}
+.wave canvas{display:block;width:100%;height:96px;cursor:pointer}
+.wave .tm{display:flex;justify-content:space-between;margin-top:8px}
+.mxbox{display:none;margin-top:26px}
+.mxbox iframe{width:100%;height:120px;border:0;display:block}
+.player.mx .wave{display:none}
+.player.mx .mxbox{display:block}
+.filt{display:flex;gap:8px;margin:34px 0 10px;flex-wrap:wrap}
+.filt button{font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 16px;border:1px solid var(--line);color:var(--mut);transition:all .2s}
+.filt button:hover{color:var(--tx);border-color:var(--tx)}
+.filt button.on{background:var(--tx);color:#000;border-color:var(--tx)}
+.tracks{border-top:1px solid var(--line)}
+.tracks li button{width:100%;display:grid;grid-template-columns:44px 1fr auto 70px;gap:14px;align-items:center;text-align:left;padding:18px 6px;border-bottom:1px solid var(--line);transition:padding .3s,background .3s}
+.tracks li button:hover{padding-left:18px;background:linear-gradient(90deg,rgba(107,255,184,.07),transparent)}
+.tracks .n{font-family:var(--fm);font-size:12px;color:var(--mut)}
+.tracks .t{font-family:var(--ft);font-weight:700;font-size:clamp(22px,3vw,34px);text-transform:uppercase;line-height:1.05}
+.tracks .t small{display:block;font-family:var(--fb);font-weight:400;font-size:13px;text-transform:none;color:var(--mut);margin-top:3px}
+.tracks .src{font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);border:1px solid var(--line);padding:4px 8px}
+.tracks .yr{font-family:var(--fm);font-size:12px;color:var(--mut);text-align:right}
+.tracks li.on .t{color:var(--ac)}
+.tracks li.on .n{color:var(--ac)}
+.eq{display:none;gap:2px;align-items:flex-end;height:14px}
+.eq i{width:3px;background:var(--ac);height:30%;animation:eq 0.9s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:-.3s}.eq i:nth-child(3){animation-delay:-.6s}
+@keyframes eq{50%{height:100%}}
+.tracks li.on.pl .eq{display:flex}
+.tracks li.on.pl .n span{display:none}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+@media (max-width:700px){
+  .np{grid-template-columns:auto 1fr}
+  .ctrl{grid-column:1/-1;justify-content:center}
+  .tracks li button{grid-template-columns:30px 1fr 54px}
+  .tracks .src{display:none}
+}
+
+/* FLYERS */
+.flyers[hidden]{display:none}
+.fl{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:50px var(--gut) 18px;margin:0 calc(var(--gut)*-1);scrollbar-width:thin;scrollbar-color:var(--ac) transparent;cursor:grab}
+.fl.drag{cursor:grabbing;scroll-snap-type:none}
+.fl figure{flex:none;width:clamp(230px,26vw,360px);scroll-snap-align:start;transition:transform .4s}
+.fl figure:hover{transform:translateY(-8px) rotate(-.6deg)}
+.fl img{width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+.fl figcaption{margin-top:12px;display:flex;justify-content:space-between;gap:10px}
+
+/* RIDER */
+.rider{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(30px,6vw,90px);margin-top:50px;align-items:center}
+.stage{border:1px solid var(--line);background:#090a0d;padding:clamp(14px,2.4vw,30px)}
+.stage svg{width:100%;height:auto;display:block;overflow:visible}
+.stage .eq-g{transition:opacity .3s}
+.stage .eq-g rect.b{fill:#15181d;stroke:#3a3f46;stroke-width:1.5;transition:stroke .25s,fill .25s}
+.stage .eq-g circle{fill:#0b0c0f;stroke:#3a3f46;stroke-width:1.5;transition:stroke .25s}
+.stage .eq-g .ln{stroke:#3a3f46;stroke-width:1.5;transition:stroke .25s}
+.stage .eq-g.hot rect.b{stroke:var(--ac);fill:#10201a}
+.stage .eq-g.hot circle,.stage .eq-g.hot .ln{stroke:var(--ac)}
+.stage.dim .eq-g:not(.hot){opacity:.35}
+.stage .lab{font-family:var(--fm);font-size:10px;letter-spacing:.12em;fill:var(--mut);text-transform:uppercase}
+.setup{margin-top:10px}
+.setup li{display:grid;grid-template-columns:minmax(76px,auto) 1fr;gap:14px;padding:22px 0;border-bottom:1px solid var(--line);cursor:default;transition:padding .3s}
+.setup li:first-child{border-top:1px solid var(--line)}
+.setup li:hover,.setup li.hot{padding-left:14px}
+.setup li.hot .q{color:var(--ac)}
+.setup .q{font-family:var(--ft);font-weight:900;font-size:48px;line-height:1;color:var(--tx);transition:color .25s}
+.setup b{display:block;font-weight:600;font-size:18px;margin-bottom:2px}
+.setup span{color:var(--mut);font-size:15px}
+.warn{margin-top:26px;display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--ac);color:var(--ac)}
+.warn .mono{color:var(--ac)}
+@media (max-width:860px){.rider{grid-template-columns:1fr}}
+.hosp{margin-top:clamp(60px,9vw,110px);display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}
+.hosp>div{padding:26px 22px;border-right:1px solid var(--line);transition:background .3s}
+.hosp>div:last-child{border-right:0}
+.hosp>div:hover{background:rgba(107,255,184,.06)}
+.hosp .ic{font-family:var(--ft);font-weight:900;font-size:56px;line-height:1;color:var(--ac)}
+.hosp h4{font-family:var(--ft);text-transform:uppercase;font-weight:700;font-size:26px;margin:14px 0 6px;line-height:1}
+.hosp p{color:var(--mut);font-size:15px}
+@media (max-width:860px){.hosp{grid-template-columns:1fr 1fr}.hosp>div:nth-child(2){border-right:0}.hosp>div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:480px){.hosp{grid-template-columns:1fr}.hosp>div{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* FOTOS */
+.gal{display:flex;gap:10px;height:min(78vh,720px);margin-top:50px}
+.gal figure{position:relative;flex:1;overflow:hidden;cursor:zoom-in;transition:flex .7s cubic-bezier(.2,.7,.2,1)}
+.gal figure:hover{flex:3.4}
+.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s,filter .6s;filter:grayscale(.85) brightness(.8)}
+.gal figure:hover img{filter:none;transform:scale(1.03)}
+.gal .dl{position:absolute;left:12px;bottom:12px;z-index:4;font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:9px 12px;background:rgba(7,8,10,.82);border:1px solid var(--line);transition:background .2s,color .2s}
+.gal .dl:hover{background:var(--ac);color:#000;border-color:var(--ac)}
+@media (max-width:760px){.gal{display:grid;grid-template-columns:1fr 1fr;height:auto}.gal figure{aspect-ratio:3/4;flex:none}.gal figure:hover{flex:none}.gal img{filter:none}}
+.lb{position:fixed;inset:0;z-index:120;background:rgba(5,6,8,.94);display:none;align-items:center;justify-content:center;padding:30px}
+.lb.open{display:flex}
+.lb img{max-height:88vh;max-width:92vw;object-fit:contain}
+.lb button{position:absolute;top:18px;right:22px;font-family:var(--fm);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:12px 16px;border:1px solid var(--line)}
+.dls{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* BOOKING */
+.book{border-top:1px solid var(--line);overflow:hidden}
+.book h2{font-size:clamp(70px,16vw,260px)}
+.bk{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);margin-top:48px}
+.wa{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.wa .big{font-family:var(--ft);font-weight:900;font-size:clamp(34px,5vw,64px);line-height:1;text-transform:uppercase}
+.wa .btn{font-size:14px;padding:20px 30px}
+.ct li a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);transition:padding .3s,color .3s}
+.ct li:first-child a{border-top:1px solid var(--line)}
+.ct li a:hover{padding-left:14px;color:var(--ac)}
+.ct b{font-family:var(--ft);font-weight:700;font-size:28px;text-transform:uppercase;line-height:1}
+.ct span{font-family:var(--fm);font-size:12px;color:var(--mut);word-break:break-all;text-align:right}
+@media (max-width:860px){.bk{grid-template-columns:1fr}}
+footer{padding:30px var(--gut);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a:hover{color:var(--ac)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}html.js .rv{opacity:1;transform:none}}
+
+/* ===== versión delicada (progressive): serif fina, rosa suave, secciones claras ===== */
+:root{--bg:#06070c;--bg2:#0b0c13;--tx:#efece8;--mut:#9b9ba8;--ac:#efc0d0;--line:rgba(239,236,232,.12);
+  --ft:'Cormorant Garamond',Georgia,serif;--fb:'Figtree',system-ui,sans-serif}
+.lt{--bg:#ebe8e3;--bg2:#e2dfd9;--tx:#16171c;--mut:#6c6e77;--ac:#a8506d;--line:rgba(22,23,28,.14);background:var(--bg);color:var(--tx)}
+body{font-weight:300}
+body::after{opacity:.045}
+.mono{font-weight:300;letter-spacing:.22em}
+h2{font-weight:300;text-transform:none;line-height:.98;letter-spacing:-.012em;font-size:clamp(52px,9vw,140px)}
+h2 em{font-style:italic;font-weight:300;color:var(--ac)}
+.br::before,.br::after{border-width:1px}
+.focus{background:
+   linear-gradient(var(--c),var(--c)) 0 0/9px 1px no-repeat,linear-gradient(var(--c),var(--c)) 0 0/1px 9px no-repeat,
+   linear-gradient(var(--c),var(--c)) 100% 0/9px 1px no-repeat,linear-gradient(var(--c),var(--c)) 100% 0/1px 9px no-repeat,
+   linear-gradient(var(--c),var(--c)) 0 100%/9px 1px no-repeat,linear-gradient(var(--c),var(--c)) 0 100%/1px 9px no-repeat,
+   linear-gradient(var(--c),var(--c)) 100% 100%/9px 1px no-repeat,linear-gradient(var(--c),var(--c)) 100% 100%/1px 9px no-repeat}
+/* botones: píldoras finas */
+.btn{border-radius:99px;border-color:rgba(239,236,232,.45);font-weight:300;letter-spacing:.18em;padding:14px 26px}
+.lt .btn{border-color:rgba(22,23,28,.4)}
+.btn:hover{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.btn.pri{background:var(--ac);border-color:var(--ac);color:#1b1218}
+.btn.pri:hover{background:var(--tx);border-color:var(--tx);color:var(--bg)}
+.lt .btn.pri{color:#fff}
+.burger{border-radius:99px;font-weight:300}
+.nav ul a{font-weight:300;letter-spacing:.2em}
+.menu a{font-weight:300;text-transform:none;font-size:clamp(44px,12vw,92px)}
+.menu a small{color:var(--ac)}
+/* portada en capas (estilo Miss Monique): logo atrás, figura adelante, todo baja con el scroll */
+.hs{height:185svh;position:relative}
+.hh{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;background:#f7f6f3}
+.hh .amb{display:none}
+.hh .arcs{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:rgba(22,23,28,.13);stroke-width:1}
+.hh .logo-b{position:absolute;left:50%;top:53%;width:min(86vw,1040px);will-change:transform;transform:translate(-50%,-50%);perspective:1000px;cursor:pointer}
+.hh .lgi{width:100%;aspect-ratio:1600/998;background:var(--lc,#0b0b0d);-webkit-mask:url(img/logo-azul.png) center/contain no-repeat;mask:url(img/logo-azul.png) center/contain no-repeat;transition:background-color .35s;transform-style:preserve-3d}
+.hh .lgi.flip{animation:flip 1s cubic-bezier(.5,0,.2,1)}
+@keyframes flip{to{transform:rotateY(360deg)}}
+.nav:not(.solid) .lg{opacity:0}
+.hh .fig{position:absolute;left:50%;bottom:0;height:90svh;max-width:none;will-change:transform;transform:translateX(-50%);
+  -webkit-mask-image:linear-gradient(#000 76%,transparent 100%);mask-image:linear-gradient(#000 76%,transparent 100%);filter:drop-shadow(0 14px 36px rgba(30,26,22,.28));pointer-events:none}
+.hh .mono{color:#5b5c64}
+.hh .btn:not(.pri){border-color:rgba(22,23,28,.45);color:#16171c}
+.hh .btn:not(.pri):hover{background:#16171c;color:#fff}
+.nav:not(.solid) ul a{color:#3a3b42}
+.nav:not(.solid) .burger{border-color:rgba(22,23,28,.4);color:#16171c}
+.hh .top{position:absolute;top:84px;left:var(--gut);right:var(--gut);display:flex;justify-content:space-between;gap:20px;z-index:3}
+.hh .in{position:absolute;left:0;right:0;bottom:9svh;z-index:4;display:flex;flex-direction:column;align-items:flex-start;gap:20px;padding:0 var(--gut);text-align:left;will-change:transform,opacity}
+.hh .cta{justify-content:flex-start}
+.hh .tag{font-family:var(--ft);font-style:italic;font-weight:300;letter-spacing:.14em;font-size:clamp(24px,3.2vw,40px);text-shadow:0 2px 24px rgba(0,0,0,.7)}
+.hh .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.hh .bot{position:absolute;left:var(--gut);right:var(--gut);bottom:22px;display:flex;justify-content:space-between;z-index:3}
+@media (max-width:760px){.hh .logo-b{width:98vw;top:40%}.hh .fig{height:62svh;bottom:15svh;-webkit-mask-image:linear-gradient(#000 82%,transparent 100%);mask-image:linear-gradient(#000 82%,transparent 100%)}.hh .top span:last-child{display:none}.hh .in{bottom:6svh;align-items:center;text-align:center}.hh .cta{justify-content:center}}
+/* géneros */
+.mq span{font-weight:300;font-style:italic;text-transform:none;font-size:clamp(30px,5vw,60px);gap:46px}
+.mq span::after{width:7px;height:7px;border:1px solid var(--ac);transform:rotate(45deg)}
+/* sobre mí */
+.about p{color:var(--tx);opacity:.78;font-weight:300}
+.about p.lead{opacity:1;font-family:var(--ft);font-size:clamp(24px,2.8vw,36px);line-height:1.3;font-weight:400}
+.about .pic img{opacity:0;transition:opacity 2s ease;object-position:50% 22%}
+.about .pic img.on{opacity:1}
+.about .pic{cursor:pointer}
+.tl .y{font-weight:300;font-style:italic;font-size:54px}
+.tl .d{color:var(--tx);opacity:.78}
+.tl li:hover{background:linear-gradient(90deg,rgba(168,80,109,.08),transparent)}
+.quote{font-weight:300;text-transform:none;font-size:clamp(34px,5.4vw,80px);line-height:1.04;max-width:20ch}
+.quote em{font-style:italic}
+.names b{font-weight:400;text-transform:none;font-size:clamp(20px,2.4vw,28px);border-radius:99px;padding:6px 22px}
+.lt .names b:hover{color:#fff}
+/* música */
+.player{border-radius:8px;background:rgba(255,255,255,.02)}
+.cover{border-radius:4px}
+.np h3{font-weight:300;text-transform:none;font-size:clamp(38px,6vw,82px);line-height:1}
+.ctrl button{border-radius:50%}
+.ctrl .play{color:#1b1218}
+.filt button{border-radius:99px;font-weight:300}
+.filt button.on{color:var(--bg)}
+.tracks .t{font-weight:400;text-transform:none;font-size:clamp(26px,3.4vw,40px);line-height:1.1}
+.tracks .t small{font-weight:300}
+.tracks li button:hover{background:linear-gradient(90deg,rgba(239,192,208,.07),transparent)}
+.tracks .src{border-radius:99px;font-weight:300}
+.eq i{width:2px}
+/* flyers */
+.fl{scroll-padding-left:var(--gut)}
+.fl figure{transition:transform .6s ease;width:auto}
+.fl img{width:auto;height:clamp(340px,56vh,540px)}
+.fl figcaption{max-width:100%;flex-direction:column;gap:2px}
+.fl figcaption span:first-child{color:var(--tx)}
+/* rider */
+.stage{border-radius:8px}
+.stage .eq-g.hot rect.b{fill:#1b1519}
+.setup .q{font-weight:300;font-style:italic;font-size:46px}
+.setup b{font-weight:500}
+.setup span{font-weight:300}
+.warn{border-radius:8px;border-color:rgba(239,192,208,.5)}
+.hosp{border-radius:8px;overflow:hidden}
+.hosp .ic{font-weight:300;font-style:italic;font-size:52px}
+.hosp h4{font-weight:400;text-transform:none;font-size:30px}
+.hosp>div:hover{background:rgba(239,192,208,.05)}
+/* fotos */
+.gal{gap:12px}
+.gal figure{border-radius:6px}
+.gal img{filter:saturate(.75) brightness(.92)}
+.gal figure:hover img{filter:none}
+.gal .dl{border-radius:99px;font-weight:300;background:rgba(246,243,238,.88);color:#16171c;border-color:transparent}
+.gal .dl:hover{background:#16171c;color:#fff}
+@media (max-width:760px){.gal img{filter:none}}
+/* booking */
+.wa .big{font-weight:300;text-transform:none;font-size:clamp(36px,5vw,68px);line-height:1.04}
+.ct b{font-weight:400;text-transform:none;font-size:32px}
+.ct li a:hover{color:var(--ac)}
+</style>
+</head>
+<body>
+
+<div class="focus" id="focus"></div>
+
+<nav class="nav" id="nav">
+  <a href="#top" aria-label="Inicio"><img class="lg" src="img/logo.png" alt="Faustino Larroucau"></a>
+  <ul>
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#musica">Música</a></li>
+    <li id="navFl" hidden><a href="#flyers">Flyers</a></li>
+    <li><a href="#rider">Rider</a></li>
+    <li><a href="#fotos">Fotos</a></li>
+  </ul>
+  <div class="right">
+    <a class="btn pri" href="#booking">Booking</a>
+    <button class="burger" id="burger" aria-label="Abrir menú">Menú</button>
+  </div>
+</nav>
+<div class="menu" id="menu">
+  <a href="#sobre"><small>01</small>Sobre mí</a>
+  <a href="#musica"><small>02</small>Música</a>
+  <a href="#flyers" id="menuFl" hidden><small>03</small>Flyers</a>
+  <a href="#rider"><small>04</small>Rider</a>
+  <a href="#fotos"><small>05</small>Fotos</a>
+  <a href="#booking"><small>06</small>Booking</a>
+</div>
+
+<!-- HERO -->
+<div class="hs" id="top">
+<header class="hh" id="hh">
+  <div class="amb" aria-hidden="true"></div>
+  <svg class="arcs" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M250 780C250 360 520 240 640 240" /><path d="M1350 780C1350 360 1080 240 960 240" />
+    <path d="M110 800C110 300 470 130 640 130" /><path d="M1490 800C1490 300 1130 130 960 130" />
+  </svg>
+  <div class="logo-b" id="lg" role="img" aria-label="Faustino Larroucau"><div class="lgi" id="lgi"></div></div>
+  <img class="fig" id="fg" src="img/figura.webp" alt="Faustino Larroucau">
+  <div class="in" id="hin">
+    <div class="cta">
+      <a class="btn pri" href="#booking">Booking</a>
+      <a class="btn" href="#musica">Escuchar ▸</a>
+    </div>
+  </div>
+  <div class="bot mono"><span>Bajá</span><span>↓</span></div>
+</header>
+</div>
+
+<div class="mq" aria-hidden="true"><div class="tr" id="mq"></div></div>
+
+<!-- SOBRE MI -->
+<section class="sec lt" id="sobre">
+  <div class="wrap">
+    <div class="kick mono rv"><b>01</b> Sobre mí</div>
+    <h2 class="rv">Melodía,<br><em>atmósfera</em><br>y groove</h2>
+    <div class="about">
+      <div class="pic br rv" id="pic">
+        <img class="on" src="img/about-1.jpg" alt="Faustino Larroucau">
+        <img src="img/about-2.jpg" alt="" loading="lazy">
+        <img src="img/about-3.jpg" alt="" loading="lazy">
+      </div>
+      <div class="txt rv">
+        <p class="lead">Faustino Larroucau es DJ y productor argentino, oriundo de San Nicolás de los Arroyos, ciudad donde nació y creció.</p>
+        <p>Su conexión con la música electrónica comenzó a los 11 años, cuando, influenciado por un amigo, descubrió el Psy Trance. Aquella primera experiencia despertó una curiosidad que, con el paso del tiempo, lo llevó a explorar y profundizar en los distintos géneros y vertientes de la escena electrónica.</p>
+        <p>A lo largo de su recorrido musical fue desarrollando una identidad sonora propia, encontrando una conexión especial con el Melodic House, estilo que hoy define gran parte de su esencia artística. En sus performances combina matices de Deep House, Progressive House, Indie Dance y Techno, construyendo atmósferas envolventes y sets que transitan entre la profundidad melódica, los sonidos orgánicos y la energía progresiva.</p>
+        <ul class="tl">
+          <li><span class="y">11</span><span class="d">años tenía cuando descubrió el Psy Trance y arrancó todo.</span></li>
+          <li><span class="y">2022</span><span class="d">DJ residente de Laguna Azul, en Córdoba, donde compartió cabina con destacados artistas de la escena electrónica.</span></li>
+          <li><span class="y">Hoy</span><span class="d">DJ residente y co-creador de Home Music Experience, proyecto nacido en San Nicolás de los Arroyos, desde el cual impulsa el desarrollo de la escena electrónica local.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="quote rv">Conexión entre el <em>sonido</em> y las <em>emociones</em></p>
+  </div>
+  <div class="names rv">
+    <div class="lbl mono">Compartió cabina con</div>
+    <div class="row" id="nm1"></div>
+    <div class="row r" id="nm2"></div>
+  </div>
+</section>
+
+<!-- MUSICA -->
+<section class="sec music" id="musica">
+  <div class="wrap">
+    <div class="kick mono rv"><b>02</b> Música</div>
+    <h2 class="rv">Temas<br>&amp; <em>sets</em></h2>
+
+    <div class="player br rv" id="player">
+      <div class="np">
+        <div class="cover"><img id="cov" alt="" hidden><img class="ph" src="img/logo.png" alt=""></div>
+        <div>
+          <span class="mono" id="npK">Producción</span>
+          <h3 id="npT">Cargando…</h3>
+          <div class="sub" id="npS"></div>
+        </div>
+        <div class="ctrl">
+          <button id="prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+          <button class="play" id="play" aria-label="Reproducir"><svg id="icoPlay" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></button>
+          <button id="next" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+        </div>
+      </div>
+      <div class="wave">
+        <canvas id="wave" aria-label="Barra de progreso, tocá para saltar"></canvas>
+        <div class="tm mono"><span id="tc">0:00</span><span id="td">0:00</span></div>
+      </div>
+      <div class="mxbox" id="mxbox"></div>
+    </div>
+
+    <div class="filt rv" id="filt">
+      <button class="on" data-f="all">Todo</button>
+      <button data-f="prod">Temas</button>
+      <button data-f="set">Sets &amp; mixes</button>
+    </div>
+    <ol class="tracks rv" id="tracks"></ol>
+
+    <div class="links rv">
+      <a class="btn" href="https://soundcloud.com/faustinolarroucau" target="_blank" rel="noopener">SoundCloud ↗</a>
+      <a class="btn" href="https://www.mixcloud.com/faustino-larroucau/" target="_blank" rel="noopener">Mixcloud ↗</a>
+    </div>
+  </div>
+</section>
+<div id="sc-holder" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"></div>
+
+<!-- FLYERS (se muestra solo si hay flyers cargados) -->
+<section class="sec flyers" id="flyers" hidden>
+  <div class="wrap">
+    <div class="kick mono rv"><b>03</b> Flyers</div>
+    <h2 class="rv">En <em>cabina</em></h2>
+  </div>
+  <div class="wrap"><div class="fl" id="fl"></div></div>
+</section>
+
+<!-- RIDER -->
+<section class="sec" id="rider">
+  <div class="wrap">
+    <div class="kick mono rv"><b>04</b> Rider</div>
+    <h2 class="rv">Rider<br><em>técnico</em></h2>
+    <div class="rider">
+      <div class="stage br rv" id="stage">
+        <svg viewBox="0 0 640 250" role="img" aria-label="Esquema del setup: 4 CDJ y un mixer en el centro">
+          <g class="eq-g" data-k="cdj"><rect class="b" x="6" y="24" width="124" height="132" rx="4"/><circle cx="68" cy="84" r="40"/><circle cx="68" cy="84" r="9"/><line class="ln" x1="22" y1="140" x2="114" y2="140"/></g>
+          <g class="eq-g" data-k="cdj"><rect class="b" x="140" y="24" width="124" height="132" rx="4"/><circle cx="202" cy="84" r="40"/><circle cx="202" cy="84" r="9"/><line class="ln" x1="156" y1="140" x2="248" y2="140"/></g>
+          <g class="eq-g" data-k="mix"><rect class="b" x="274" y="14" width="92" height="152" rx="4"/><line class="ln" x1="294" y1="40" x2="294" y2="116"/><line class="ln" x1="320" y1="40" x2="320" y2="116"/><line class="ln" x1="346" y1="40" x2="346" y2="116"/><rect class="b" x="288" y="86" width="12" height="10"/><rect class="b" x="314" y="60" width="12" height="10"/><rect class="b" x="340" y="76" width="12" height="10"/><line class="ln" x1="292" y1="146" x2="348" y2="146"/></g>
+          <g class="eq-g" data-k="cdj"><rect class="b" x="376" y="24" width="124" height="132" rx="4"/><circle cx="438" cy="84" r="40"/><circle cx="438" cy="84" r="9"/><line class="ln" x1="392" y1="140" x2="484" y2="140"/></g>
+          <g class="eq-g" data-k="cdj"><rect class="b" x="510" y="24" width="124" height="132" rx="4"/><circle cx="572" cy="84" r="40"/><circle cx="572" cy="84" r="9"/><line class="ln" x1="526" y1="140" x2="618" y2="140"/></g>
+          <g class="eq-g" data-k="mon"><rect class="b" x="60" y="196" width="46" height="46" rx="4"/><circle cx="83" cy="219" r="14"/><rect class="b" x="534" y="196" width="46" height="46" rx="4"/><circle cx="557" cy="219" r="14"/><rect class="b" x="284" y="190" width="72" height="54" rx="4"/><circle cx="320" cy="217" r="20"/></g>
+          <text class="lab" x="68" y="12">CDJ</text><text class="lab" x="202" y="12">CDJ</text><text class="lab" x="320" y="8" text-anchor="middle">DJM</text><text class="lab" x="438" y="12">CDJ</text><text class="lab" x="572" y="12">CDJ</text>
+          <text class="lab" x="120" y="224">Monitor</text><text class="lab" x="378" y="224">Sub</text><text class="lab" x="458" y="224">Monitor</text>
+        </svg>
+        <div class="mono" style="margin-top:14px">Pasá el mouse por cada equipo</div>
+      </div>
+      <div class="rv">
+        <ul class="setup" id="setup">
+          <li data-k="mix"><span class="q">x1</span><div><b>Pioneer DJM900Nxs2</b><span>Mixer</span></div></li>
+          <li data-k="cdj"><span class="q">x4</span><div><b>Pioneer CDJ2000Nxs2</b><span>Conectadas en LINK con cable Ethernet, o set up superior.</span></div></li>
+          <li data-k="mon"><span class="q">x2+1</span><div><b>High Quality Monitors x2 + Low Subwoofer x1</b><span>Conectados a la salida BOOTH del mixer.</span></div></li>
+        </ul>
+        <div class="warn"><span class="mono">Importante</span><span>Prueba de sonido antes de comenzar el evento.</span></div>
+      </div>
+    </div>
+
+    <div class="kick mono rv" style="margin-top:clamp(70px,10vw,130px)"><b>·</b> Hospitalidad</div>
+    <h2 class="rv" style="font-size:clamp(46px,8vw,120px)">Hospitality<br><em>rider</em></h2>
+    <div class="hosp rv">
+      <div><div class="ic">01</div><h4>Alojamiento</h4><p>Habitación doble.</p></div>
+      <div><div class="ic">02</div><h4>Check in / out</h4><p>Acorde al tiempo de permanencia.</p></div>
+      <div><div class="ic">03</div><h4>Traslados</h4><p>Antes y después del evento.</p></div>
+      <div><div class="ic">04</div><h4>Bebidas</h4><p>Agua mineral y bebidas alcohólicas durante el evento.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOTOS -->
+<section class="sec lt" id="fotos">
+  <div class="wrap">
+    <div class="kick mono rv"><b>05</b> Prensa</div>
+    <h2 class="rv">Fotos &amp;<br><em>logo</em></h2>
+    <div class="gal rv" id="gal">
+      <figure data-big="img/g1.jpg"><img src="img/g1.jpg" alt="Faustino Larroucau tocando, luces violetas" loading="lazy"><a class="dl" href="descargas/faustino-larroucau-01-club.jpeg" download>↓ Original</a></figure>
+      <figure data-big="img/g3.jpg"><img src="img/g3.jpg" alt="Retrato de Faustino Larroucau" loading="lazy"><a class="dl" href="descargas/faustino-larroucau-03-estudio.jpeg" download>↓ Original</a></figure>
+      <figure data-big="img/g2.jpg"><img src="img/g2.jpg" alt="Faustino Larroucau en cabina" loading="lazy"><a class="dl" href="descargas/faustino-larroucau-02-cabina.jpeg" download>↓ Original</a></figure>
+      <figure data-big="img/g5.jpg"><img src="img/g5.jpg" alt="Faustino Larroucau, retrato" loading="lazy"><a class="dl" href="descargas/faustino-larroucau-05-estudio.jpeg" download>↓ Original</a></figure>
+      <figure data-big="img/g4.jpg"><img src="img/g4.jpg" alt="Faustino Larroucau, neón y luz azul" loading="lazy"><a class="dl" href="descargas/faustino-larroucau-04-club.jpeg" download>↓ Original</a></figure>
+    </div>
+    <div class="dls rv">
+      <a class="btn" href="descargas/logo-faustino-larroucau-blanco.png" download>↓ Logo PNG (blanco)</a>
+      <a class="btn" href="descargas/presskit-faustino-larroucau.pdf" target="_blank" rel="noopener">Ver presskit PDF ↗</a>
+      <a class="btn" href="descargas/presskit-faustino-larroucau.pdf" download>↓ Descargar presskit</a>
+    </div>
+  </div>
+</section>
+<div class="lb" id="lb"><button id="lbx">Cerrar ✕</button><img alt=""></div>
+
+<!-- BOOKING -->
+<section class="sec book" id="booking">
+  <div class="wrap">
+    <div class="kick mono rv"><b>06</b> Contacto</div>
+    <h2 class="rv">Booking</h2>
+    <div class="bk">
+      <div class="wa rv">
+        <div class="big">Hablemos de tu próxima fecha</div>
+        <a class="btn pri" href="https://wa.me/5493364301074" target="_blank" rel="noopener">WhatsApp +54 9 336 430 1074 ↗</a>
+      </div>
+      <ul class="ct rv">
+        <li><a href="mailto:Faus_laribera@hotmail.com"><b>Mail</b><span>Faus_laribera@hotmail.com</span></a></li>
+        <li><a href="https://www.instagram.com/faustinolarroucau/" target="_blank" rel="noopener"><b>Instagram</b><span>@faustinolarroucau</span></a></li>
+        <li><a href="https://soundcloud.com/faustinolarroucau" target="_blank" rel="noopener"><b>SoundCloud</b><span>/faustinolarroucau</span></a></li>
+        <li><a href="https://www.mixcloud.com/faustino-larroucau/" target="_blank" rel="noopener"><b>Mixcloud</b><span>/faustino-larroucau</span></a></li>
+        <li><a href="https://t.me/+5493364301074" target="_blank" rel="noopener"><b>Telegram</b><span>+54 9 336 430 1074</span></a></li>
+        <li><a href="https://linktr.ee/faustinolarroucau" target="_blank" rel="noopener"><b>Linktree</b><span>/faustinolarroucau</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<footer class="mono">
+  <span>© Faustino Larroucau</span>
+  <span>Web por <a href="https://www.instagram.com/playskit.dj/" target="_blank" rel="noopener">Playskit ✦</a></span>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+document.documentElement.classList.add('js');
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- DATOS ---------- */
+var FLYERS=[
+  // orden: del más nuevo al más viejo
+  {src:'img/flyers/01-rio-tokyo-2026-10.jpg',title:'Rio Tokyo Club',date:'16 Oct 2026'},
+  {src:'img/flyers/02-dema-2026-09.jpg',title:'Dema Club · Facundo Sival',date:'12 Sep 2026'},
+  {src:'img/flyers/03-tonaco-2025-12.jpg',title:'Tonaco · Green Cycle',date:'13 Dic 2025'},
+  {src:'img/flyers/04-main-club-2025-11.jpg',title:'The Main Club · Vitti Alonsø',date:'1 Nov 2025'},
+  {src:'img/flyers/05-gustin-2025-03.jpg',title:'Gustin · Home 2nd Anniversary',date:'28 Mar 2025'},
+  {src:'img/flyers/06-berardi-2025-02.jpg',title:'Ignacio Berardi · Home',date:'7 Feb 2025'},
+  {src:'img/flyers/08-halloween-2024-10.jpg',title:'Halloween · Terminal Arena',date:'19 Oct 2024'},
+  {src:'img/flyers/08a-home-puccio-2024-08.jpg',title:'Mario Puccio · Home · Bowie Club',date:'16 Ago 2024'},
+  {src:'img/flyers/08b-terrace-2023-02.jpg',title:'Terrace Sessions · Botánico',date:'2 Feb 2023'},
+  {src:'img/flyers/09-jero-2023-01.jpg',title:'Jero Kalenberg · Patio Electrónico',date:'13 Ene 2023'},
+  {src:'img/flyers/10-lisandro-2022-12.jpg',title:'Lisandro · Laguna Azul',date:'3 Dic 2022'},
+  {src:'img/flyers/11-franco-2022-01.jpg',title:'Franco Armellini · Laguna Azul',date:'22 Ene 2022'},
+  {src:'img/flyers/12-techno-time-2017-05.jpg',title:'Techno Time 2',date:'13 May 2017'}
+];
+var NAMES=['Gustin','Tonaco','Martín Huergo','JP Sgalia','Mario Puccio','Martín Gardoqui','Fernando Ferreyra','Lisandro','Julián Nates','Ignacio Berardi','Melodiam','Simbad','Lio Q','Pedro D’Alessandro','Mink','Shahar','Tekko','Camila Díaz','Nandu'];
+var GENRES=['Melodic House','Deep House','Progressive House','Indie Dance','Techno'];
+var MXP='https://thumbnailer.mixcloud.com/unsafe/300x300/extaudio/';
+var T=[
+ {t:'Tanguito',s:'Original Mix',k:'prod',y:2026,src:'sc',u:'faustinolarroucau/tanguito-faustino-larroucau'},
+ {t:'La Lealtad',s:'ft. Pity Alvarez',k:'prod',y:2025,src:'sc',u:'faustinolarroucau/faustino-larroucau-la-lealtad'},
+ {t:'DeepMind',s:'Original Mix',k:'prod',y:2024,src:'sc',u:'faustinolarroucau/faustino-larroucau-deepmind'},
+ {t:'La Pregunta',s:'Juan Hansen · Faustino Larroucau Edit · Free download',k:'prod',y:2022,src:'sc',u:'faustinolarroucau/lapreguntafaustinolarroucau'},
+ {t:'Acid Dementia',s:'',k:'prod',y:2014,src:'sc',u:'faustinolarroucau/acid-dementia'},
+ {t:'Caroline',s:'',k:'prod',y:2014,src:'sc',u:'faustinolarroucau/caroline'},
+ {t:'The Main',s:'Club X Crear.Prod set',k:'set',y:2025,src:'sc',u:'faustinolarroucau/faustino-larroucau-the-main'},
+ {t:'Quarantine',s:'Mixcloud · 02/04/2020 · 62 min',k:'set',y:2020,src:'mx',u:'/faustino-larroucau/faustino-larroucau-quarantine-02042020/',p:'1/1/6/6/d52b-2bc7-42bb-b7fc-006af63b7c67'},
+ {t:'Island Dreamer',s:'Dinámica Underground set · 60 min',k:'set',y:2017,src:'mx',u:'/faustino-larroucau/faustino-larroucau-island-dreamer-dinamicaunderground-set-04-08-2017/',p:'9/2/0/c/7a1a-0b61-4bcf-a15c-93bc7be164c8'},
+ {t:'Bohemian Set',s:'Mixcloud · 64 min',k:'set',y:2017,src:'mx',u:'/faustino-larroucau/faustino-larroucau-bohemian-set-23-05-2017/',p:'0/e/2/9/7e38-47f7-4453-9bad-da42dc179aab'},
+ {t:'Underground District Set',s:'Mixcloud · 60 min',k:'set',y:2017,src:'mx',u:'/faustino-larroucau/faustino-larroucau-underground-district-set/',p:'9/f/f/2/340e-ed93-45b8-93d2-bbbf996e06d8'},
+ {t:'Closing Doors Mix',s:'Mixcloud · 50 min',k:'set',y:2016,src:'mx',u:'/faustino-larroucau/faustino-larroucau-closing-doors-mix/',p:'a/8/0/b/df1a-6f5f-45bf-9648-c19e81b4cbd3'},
+ {t:'Black Spirit Mix',s:'Mixcloud · 23 min',k:'set',y:2016,src:'mx',u:'/faustino-larroucau/faustino-larroucau-black-spirit-mix/',p:'5/1/8/9/96fe-bd51-478e-80cd-505095879d12'},
+ {t:'Small Black Centaur',s:'Mixcloud · 24 min',k:'set',y:2015,src:'mx',u:'/faustino-larroucau/small-black-centaur/',p:'6/4/4/8/32e9-76bb-4bc5-9900-a75892dfe919.jpg'},
+ {t:'Lost in America',s:'F.L & M.T.F · Set live',k:'set',y:2014,src:'sc',u:'faustinolarroucau/lost-in-america-fl-mtf-set-liveoriginal-mix'},
+ {t:'Cereal Mix',s:'',k:'set',y:2014,src:'sc',u:'faustinolarroucau/cereal-mix'}
+];
+
+/* ---------- Reveal ---------- */
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1}):null;
+$$('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+setTimeout(function(){$$('.rv:not(.in)').forEach(function(el){if(el.getBoundingClientRect().top<innerHeight)el.classList.add('in')})},1800);
+
+/* ---------- Nav / menú ---------- */
+var nav=$('#nav');
+addEventListener('scroll',function(){nav.classList.toggle('solid',scrollY>60)},{passive:true});
+var menu=$('#menu'),bg=$('#burger');
+bg.addEventListener('click',function(){var o=menu.classList.toggle('open');bg.textContent=o?'Cerrar':'Menú'});
+$$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');bg.textContent='Menú'})});
+
+/* ---------- Marquees ---------- */
+(function(){var h='';for(var i=0;i<2;i++)GENRES.forEach(function(g){h+='<span>'+g+'</span>'});$('#mq').innerHTML=h+h;
+ var m=function(id,arr){var s='';for(var i=0;i<2;i++)arr.forEach(function(n){s+='<b>'+n+'</b>'});$(id).innerHTML=s+s};
+ m('#nm1',NAMES);m('#nm2',NAMES.slice().reverse())})();
+
+/* ---------- Portada en capas: baja con el scroll + parallax de mouse ---------- */
+(function(){
+ var hs=$('.hs'),lg=$('#lg'),fg=$('#fg'),hin=$('#hin'),hh=$('#hh'),mx=0,my=0,cx=0,cy=0,p=0,on=true,busy=false;
+ function paint(){
+  busy=false;
+  cx+=(mx-cx)*.08;cy+=(my-cy)*.08;
+  var vh=innerHeight;
+  lg.style.transform='translate(calc(-50% + '+(cx*-18).toFixed(1)+'px),calc(-50% + '+(p*vh*.42+cy*-8).toFixed(1)+'px)) scale('+(1+p*.14).toFixed(3)+')';
+  fg.style.transform='translate(calc(-50% + '+(cx*10).toFixed(1)+'px),'+(p*vh*.2+cy*6).toFixed(1)+'px) scale('+(1+p*.05).toFixed(3)+')';
+  hin.style.opacity=Math.max(0,1-p*2.2).toFixed(2);hin.style.transform='translateY('+(p*60).toFixed(1)+'px)';
+  hh.style.opacity=p>.78?Math.max(0,1-(p-.78)*4.5).toFixed(2):1;
+  if(Math.abs(mx-cx)>.002||Math.abs(my-cy)>.002)req()}
+ function req(){if(!busy&&on){busy=true;requestAnimationFrame(paint)}}
+ function scroll(){var r=hs.getBoundingClientRect(),tot=hs.offsetHeight-innerHeight;p=Math.min(1,Math.max(0,-r.top/tot));req()}
+ addEventListener('scroll',scroll,{passive:true});addEventListener('resize',scroll);
+ if(!reduce&&matchMedia('(hover:hover)').matches)addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;req()});
+ if('IntersectionObserver' in window)new IntersectionObserver(function(e){on=e[0].isIntersecting;if(on)req()}).observe(hs);
+ scroll();
+ var lgi=$('#lgi'),cols=['#0b0b0d','#1c36d6','#d9648f','#7a6bd6'],ci=0,fl=false;
+ function flip(){if(fl)return;fl=true;lgi.classList.remove('flip');void lgi.offsetWidth;lgi.classList.add('flip');setTimeout(function(){ci=(ci+1)%cols.length;lgi.style.setProperty('--lc',cols[ci])},480);setTimeout(function(){fl=false},1050)}
+ lg.addEventListener('pointerenter',flip);lg.addEventListener('click',flip);
+})();
+
+/* ---------- Foto sobre mí: fotos que se funden despacio ---------- */
+(function(){var p=$('#pic'),im=$$('img',p),i=0,t=null;
+ function nx(){im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on')}
+ p.addEventListener('click',nx);
+ if(reduce||!('IntersectionObserver' in window))return;
+ new IntersectionObserver(function(e){clearInterval(t);if(e[0].isIntersecting)t=setInterval(nx,4800)}).observe(p)})();
+
+/* ---------- Cursor que enfoca ---------- */
+(function(){
+ if(!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+ var f=$('#focus'),x=-50,y=-50,w=30,h=30,tx=0,ty=0,tw=30,th=30,tgt=null,on=false;
+ addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;if(!on){on=true;f.classList.add('on');tx=x-15;ty=y-15;frame()}
+  var el=e.target.closest&&e.target.closest('a,button,[data-focus],.gal figure,.fl figure');tgt=el});
+ document.addEventListener('pointerleave',function(){f.classList.remove('on');on=false});
+ function frame(){
+  if(tgt){var r=tgt.getBoundingClientRect();if(r.width<700&&r.height<260){tx=r.left-6;ty=r.top-6;tw=r.width+12;th=r.height+12}else{tx=x-15;ty=y-15;tw=30;th=30}}
+  else{tx=x-15;ty=y-15;tw=30;th=30}
+  var cur=f._p||(f._p={x:tx,y:ty,w:30,h:30});
+  cur.x+=(tx-cur.x)*.28;cur.y+=(ty-cur.y)*.28;cur.w+=(tw-cur.w)*.28;cur.h+=(th-cur.h)*.28;
+  f.style.transform='translate('+cur.x.toFixed(1)+'px,'+cur.y.toFixed(1)+'px)';f.style.width=cur.w.toFixed(1)+'px';f.style.height=cur.h.toFixed(1)+'px';
+  if(on)requestAnimationFrame(frame)}
+})();
+
+/* ---------- Rider interactivo ---------- */
+(function(){
+ var st=$('#stage'),gs=$$('.eq-g',st),ls=$$('#setup li');
+ function hot(k){gs.forEach(function(g){g.classList.toggle('hot',!!k&&g.dataset.k===k)});ls.forEach(function(l){l.classList.toggle('hot',!!k&&l.dataset.k===k)});st.classList.toggle('dim',!!k)}
+ gs.forEach(function(g){g.addEventListener('pointerenter',function(){hot(g.dataset.k)});g.addEventListener('pointerleave',function(){hot()})});
+ ls.forEach(function(l){l.addEventListener('pointerenter',function(){hot(l.dataset.k)});l.addEventListener('pointerleave',function(){hot()})});
+})();
+
+/* ---------- Galería + lightbox ---------- */
+var lb=$('#lb'),lbi=$('img',lb);
+function openLb(src){lbi.src=src;lb.classList.add('open')}
+function closeLb(){lb.classList.remove('open')}
+lb.addEventListener('click',function(e){if(e.target!==lbi)closeLb()});$('#lbx').addEventListener('click',closeLb);
+addEventListener('keydown',function(e){if(e.key==='Escape')closeLb()});
+$$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(e.target.closest('.dl'))return;openLb(f.dataset.big)})});
+
+/* ---------- Flyers ---------- */
+(function(){
+ if(!FLYERS.length)return;
+ $('#flyers').hidden=false;$('#navFl').hidden=false;$('#menuFl').hidden=false;
+ var fl=$('#fl');
+ fl.innerHTML=FLYERS.map(function(f){return '<figure class="br" data-big="'+f.src+'"><img src="'+f.src+'" alt="'+(f.title||'Flyer')+'" decoding="async" draggable="false">'+((f.title||f.date)?'<figcaption class="mono"><span>'+(f.title||'')+'</span><span>'+(f.date||'')+'</span></figcaption>':'')+'</figure>'}).join('');
+ var down=false,sx=0,sl=0,moved=0;
+ fl.addEventListener('pointerdown',function(e){if(e.pointerType==='touch')return;down=true;moved=0;sx=e.clientX;sl=fl.scrollLeft;fl.classList.add('drag')});
+ addEventListener('pointermove',function(e){if(!down)return;moved=Math.abs(e.clientX-sx);fl.scrollLeft=sl-(e.clientX-sx)});
+ addEventListener('pointerup',function(){down=false;fl.classList.remove('drag')});
+ $$('figure',fl).forEach(function(f){f.addEventListener('click',function(){if(moved<6)openLb(f.dataset.big)})});
+})();
+
+/* ---------- Reproductor ---------- */
+(function(){
+ var list=$('#tracks'),playerEl=$('#player'),cov=$('#cov'),npT=$('#npT'),npS=$('#npS'),npK=$('#npK'),
+     tc=$('#tc'),td=$('#td'),playB=$('#play'),ico=$('#icoPlay'),cv=$('#wave'),mxbox=$('#mxbox');
+ var filter='all',cur=0,playing=false,prog=0,dur=0,w=null,ready=false,pending=null,hovX=null;
+ var PLAY='M7 4v16l13-8z',PAUSE='M6 4h4v16H6zM14 4h4v16h-4z';
+
+ function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);return m+':'+('0'+(s%60)).slice(-2)}
+ function vis(){return T.map(function(t,i){return i}).filter(function(i){return filter==='all'||T[i].k===filter})}
+
+ function render(){
+  list.innerHTML=vis().map(function(i,n){var t=T[i];
+   return '<li class="'+(i===cur?'on':'')+(i===cur&&playing?' pl':'')+'"><button data-i="'+i+'"><span class="n"><span>'+('0'+(n+1)).slice(-2)+'</span><span class="eq"><i></i><i></i><i></i></span></span><span class="t">'+t.t+(t.s?'<small>'+t.s+'</small>':'')+'</span><span class="src">'+(t.src==='sc'?'SoundCloud':'Mixcloud')+'</span><span class="yr">'+t.y+'</span></button></li>'}).join('');
+ }
+ list.addEventListener('click',function(e){var b=e.target.closest('button');if(b)select(+b.dataset.i,true)});
+ $$('#filt button').forEach(function(b){b.addEventListener('click',function(){filter=b.dataset.f;$$('#filt button').forEach(function(x){x.classList.toggle('on',x===b)});render()})});
+
+ function setPlaying(p){playing=p;ico.innerHTML='<path d="'+(p?PAUSE:PLAY)+'"/>';playB.setAttribute('aria-label',p?'Pausar':'Reproducir');
+  $$('li',list).forEach(function(li){var on=li.firstChild.dataset.i==cur;li.classList.toggle('pl',on&&p)})}
+
+ function meta(t){npT.textContent=t.t;npS.textContent=t.s||'';npK.textContent=(t.k==='prod'?'Tema':'Set')+' · '+t.y;
+  if(t.src==='mx'){cov.src=MXP+t.p;cov.hidden=false}else{cov.hidden=true;cov.removeAttribute('src')}}
+
+ function select(i,auto){
+  cur=i;var t=T[i];prog=0;dur=0;tc.textContent='0:00';td.textContent='0:00';meta(t);render();
+  if(t.src==='mx'){
+   if(w&&ready)try{w.pause()}catch(e){}
+   setPlaying(false);playerEl.classList.add('mx');
+   mxbox.innerHTML='<iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=0&mini=1'+(auto?'&autoplay=1':'')+'&feed='+encodeURIComponent(t.u)+'" allow="autoplay" title="'+t.t+'"></iframe>';
+   return}
+  mxbox.innerHTML='';playerEl.classList.remove('mx');
+  if(!ready){pending={i:i,auto:auto};return}
+  setPlaying(false);
+  w.load('https://soundcloud.com/'+t.u,{auto_play:!!auto,visual:false,hide_related:true,show_comments:false,show_user:false,show_reposts:false,callback:function(){bind();info(t)}});
+ }
+ function info(t){
+  w.getDuration(function(d){dur=d;td.textContent=fmt(d)});
+  w.getCurrentSound(function(s){if(!s)return;if(T[cur]!==t)return;if(s.artwork_url){cov.src=s.artwork_url.replace('-large','-t500x500');cov.hidden=false}});
+ }
+ function bind(){
+  var E=SC.Widget.Events;
+  [E.PLAY,E.PAUSE,E.FINISH,E.PLAY_PROGRESS].forEach(function(ev){try{w.unbind(ev)}catch(e){}});
+  w.bind(E.PLAY,function(){setPlaying(true)});
+  w.bind(E.PAUSE,function(){setPlaying(false)});
+  w.bind(E.FINISH,function(){setPlaying(false);step(1,true)});
+  w.bind(E.PLAY_PROGRESS,function(d){prog=d.relativePosition;if(dur)tc.textContent=fmt(d.currentPosition)});
+ }
+ function step(dir,auto){var v=vis();var p=v.indexOf(cur);if(p<0)p=0;select(v[(p+dir+v.length)%v.length],auto)}
+ $('#next').addEventListener('click',function(){step(1,true)});
+ $('#prev').addEventListener('click',function(){step(-1,true)});
+ playB.addEventListener('click',function(){
+  if(T[cur].src==='mx'){if(!mxbox.querySelector('iframe'))select(cur,true);return}
+  if(!ready){pending={i:cur,auto:true};return}
+  w.toggle()});
+
+ /* iframe oculto de SoundCloud */
+ function loadSC(){
+  var first=T.filter(function(t){return t.src==='sc'})[0];
+  var ifr=document.createElement('iframe');ifr.allow='autoplay';ifr.title='SoundCloud';
+  ifr.src='https://w.soundcloud.com/player/?url='+encodeURIComponent('https://soundcloud.com/'+first.u)+'&visual=false&auto_play=false';
+  $('#sc-holder').appendChild(ifr);
+  var s=document.createElement('script');s.src='https://w.soundcloud.com/player/api.js';
+  s.onload=function(){try{w=SC.Widget(ifr);w.bind(SC.Widget.Events.READY,function(){ready=true;bind();
+    if(pending){var p=pending;pending=null;select(p.i,p.auto)}else if(T[cur].src==='sc'){info(T[cur])}})}catch(e){}};
+  document.body.appendChild(s);
+ }
+ if(document.readyState==='complete')loadSC();else addEventListener('load',loadSC);
+
+ /* barras de onda (decorativas) + progreso real */
+ var ctx=cv.getContext('2d'),W=0,H=0,bars=[],dpr=Math.min(devicePixelRatio||1,2),onScreen=true,ticking=false,lastDraw=0;
+ function seed(i){var a=[],s=(i+3)*9301;for(var n=0;n<260;n++){s=(s*49297+233280)%233280;var r=s/233280;a.push(.22+.78*Math.abs(Math.sin(n/9+i)*.55+Math.sin(n/3.1)*.25)*(.6+r*.6))}return a}
+ function size(){W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+ function draw(t){
+  var step=6,n=Math.floor(W/step),b=seed(cur);ctx.clearRect(0,0,W,H);
+  for(var i=0;i<n;i++){
+   var v=b[Math.floor(i/n*b.length)],pulse=playing?1+.07*Math.sin(t/260+i*.5):1,h=Math.max(3,v*H*pulse*.9);
+   var x=i*step,p=i/n,hv=hovX!==null&&Math.abs(x-hovX)<20;
+   ctx.fillStyle=p<=prog?'#efc0d0':(hv?'rgba(239,236,232,.6)':'rgba(239,236,232,.2)');
+   ctx.fillRect(x,(H-h)/2,2,h)}
+ }
+ function loop(t){if(!onScreen){ticking=false;return}
+  if(t-lastDraw>33){lastDraw=t;draw(t)}
+  requestAnimationFrame(loop)}
+ function go(){if(!ticking){ticking=true;requestAnimationFrame(loop)}}
+ if('IntersectionObserver' in window)new IntersectionObserver(function(e){onScreen=e[0].isIntersecting;if(onScreen)go()}).observe(playerEl);
+ new ResizeObserver(function(){size()}).observe(cv);
+ cv.addEventListener('pointermove',function(e){hovX=e.clientX-cv.getBoundingClientRect().left});
+ cv.addEventListener('pointerleave',function(){hovX=null});
+ cv.addEventListener('click',function(e){if(!ready||!dur||T[cur].src!=='sc')return;var r=cv.getBoundingClientRect();var p=(e.clientX-r.left)/r.width;prog=p;w.seekTo(p*dur)});
+ size();go();
+ select(0,false);
+})();
+})();
+</script>
+</body>
+</html>
