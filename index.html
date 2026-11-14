@@ -8,10 +8,10 @@
 <meta property="og:title" content="Faustino Larroucau — DJ & Producer">
 <meta property="og:description" content="Tocar con el alma. Melodic House · Deep House · Progressive House · Indie Dance · Techno.">
 <meta property="og:image" content="img/hero.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307080a'/%3E%3Cpath d='M14 26V14h12M50 38v12H38' fill='none' stroke='%23efc0d0' stroke-width='3'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Georgia' font-weight='400' font-size='22' fill='%23fff'%3EFL%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307080a'/%3E%3Cpath d='M14 26V14h12M50 38v12H38' fill='none' stroke='%23ff5a24' stroke-width='3'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Georgia' font-weight='400' font-size='22' fill='%23fff'%3EFL%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Figtree:wght@300;400;500&family=Martian+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500&family=Figtree:wght@300;400;500&family=Martian+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#07080a;--bg2:#0d0f12;--tx:#ecebe6;--mut:#8a8f95;--ac:#6bffb8;--line:rgba(236,235,230,.14);
@@ -242,9 +242,9 @@ footer a:hover{color:var(--ac)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}html.js .rv{opacity:1;transform:none}}
 
 /* ===== versión delicada (progressive): serif fina, rosa suave, secciones claras ===== */
-:root{--bg:#06070c;--bg2:#0b0c13;--tx:#efece8;--mut:#9b9ba8;--ac:#efc0d0;--line:rgba(239,236,232,.12);
+:root{--bg:#06070c;--bg2:#0b0c13;--tx:#efece8;--mut:#9b9ba8;--ac:#ff5a24;--line:rgba(239,236,232,.12);
   --ft:'Cormorant Garamond',Georgia,serif;--fb:'Figtree',system-ui,sans-serif}
-.lt{--bg:#ebe8e3;--bg2:#e2dfd9;--tx:#16171c;--mut:#6c6e77;--ac:#a8506d;--line:rgba(22,23,28,.14);background:var(--bg);color:var(--tx)}
+.lt{--bg:#ebe8e3;--bg2:#e2dfd9;--tx:#16171c;--mut:#6c6e77;--ac:#e0451a;--line:rgba(22,23,28,.14);background:var(--bg);color:var(--tx)}
 body{font-weight:300}
 body::after{opacity:.045}
 .mono{font-weight:300;letter-spacing:.22em}
@@ -260,7 +260,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .btn{border-radius:99px;border-color:rgba(239,236,232,.45);font-weight:300;letter-spacing:.18em;padding:14px 26px}
 .lt .btn{border-color:rgba(22,23,28,.4)}
 .btn:hover{background:var(--tx);color:var(--bg);border-color:var(--tx)}
-.btn.pri{background:var(--ac);border-color:var(--ac);color:#1b1218}
+.btn.pri{background:var(--ac);border-color:var(--ac);color:#fff}
 .btn.pri:hover{background:var(--tx);border-color:var(--tx);color:var(--bg)}
 .lt .btn.pri{color:#fff}
 .burger{border-radius:99px;font-weight:300}
@@ -271,11 +271,9 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .hs{height:185svh;position:relative}
 .hh{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;background:#f7f6f3}
 .hh .amb{display:none}
-.hh .arcs{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:rgba(22,23,28,.13);stroke-width:1}
-.hh .logo-b{position:absolute;left:50%;top:53%;width:min(86vw,1040px);will-change:transform;transform:translate(-50%,-50%);perspective:1000px;cursor:pointer}
-.hh .lgi{width:100%;aspect-ratio:1600/998;background:var(--lc,#0b0b0d);-webkit-mask:url(img/logo-azul.png) center/contain no-repeat;mask:url(img/logo-azul.png) center/contain no-repeat;transition:background-color .35s;transform-style:preserve-3d}
-.hh .lgi.flip{animation:flip 1s cubic-bezier(.5,0,.2,1)}
-@keyframes flip{to{transform:rotateY(360deg)}}
+.hh .mk{position:absolute;left:50%;top:50%;width:min(94vw,1180px);aspect-ratio:1600/998;will-change:transform;transform:translate(-50%,-50%);--lc:#0b0b0d;--ll:rgba(255,90,36,.45)}
+.hh .mk i{position:absolute;inset:0;will-change:transform;-webkit-mask:url(img/logo-linea.png) center/contain no-repeat;mask:url(img/logo-linea.png) center/contain no-repeat;background:var(--lc)}
+.hh .mk i.ln{background:var(--ll)}
 .nav:not(.solid) .lg{opacity:0}
 .hh .fig{position:absolute;left:50%;bottom:0;height:90svh;max-width:none;will-change:transform;transform:translateX(-50%);
   -webkit-mask-image:linear-gradient(#000 76%,transparent 100%);mask-image:linear-gradient(#000 76%,transparent 100%);filter:drop-shadow(0 14px 36px rgba(30,26,22,.28));pointer-events:none}
@@ -290,7 +288,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .hh .tag{font-family:var(--ft);font-style:italic;font-weight:300;letter-spacing:.14em;font-size:clamp(24px,3.2vw,40px);text-shadow:0 2px 24px rgba(0,0,0,.7)}
 .hh .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .hh .bot{position:absolute;left:var(--gut);right:var(--gut);bottom:22px;display:flex;justify-content:space-between;z-index:3}
-@media (max-width:760px){.hh .logo-b{width:98vw;top:40%}.hh .fig{height:62svh;bottom:15svh;-webkit-mask-image:linear-gradient(#000 82%,transparent 100%);mask-image:linear-gradient(#000 82%,transparent 100%)}.hh .top span:last-child{display:none}.hh .in{bottom:6svh;align-items:center;text-align:center}.hh .cta{justify-content:center}}
+@media (max-width:760px){.hh .mk{width:100vw;top:42%}.hh .fig{height:62svh;bottom:15svh;-webkit-mask-image:linear-gradient(#000 82%,transparent 100%);mask-image:linear-gradient(#000 82%,transparent 100%)}.hh .top span:last-child{display:none}.hh .in{bottom:6svh;align-items:center;text-align:center}.hh .cta{justify-content:center}}
 /* géneros */
 .mq span{font-weight:300;font-style:italic;text-transform:none;font-size:clamp(30px,5vw,60px);gap:46px}
 .mq span::after{width:7px;height:7px;border:1px solid var(--ac);transform:rotate(45deg)}
@@ -302,7 +300,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .about .pic{cursor:pointer}
 .tl .y{font-weight:300;font-style:italic;font-size:54px}
 .tl .d{color:var(--tx);opacity:.78}
-.tl li:hover{background:linear-gradient(90deg,rgba(168,80,109,.08),transparent)}
+.tl li:hover{background:linear-gradient(90deg,rgba(224,69,26,.08),transparent)}
 .quote{font-weight:300;text-transform:none;font-size:clamp(34px,5.4vw,80px);line-height:1.04;max-width:20ch}
 .quote em{font-style:italic}
 .names b{font-weight:400;text-transform:none;font-size:clamp(20px,2.4vw,28px);border-radius:99px;padding:6px 22px}
@@ -312,12 +310,12 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .cover{border-radius:4px}
 .np h3{font-weight:300;text-transform:none;font-size:clamp(38px,6vw,82px);line-height:1}
 .ctrl button{border-radius:50%}
-.ctrl .play{color:#1b1218}
+.ctrl .play{color:#fff}
 .filt button{border-radius:99px;font-weight:300}
 .filt button.on{color:var(--bg)}
 .tracks .t{font-weight:400;text-transform:none;font-size:clamp(26px,3.4vw,40px);line-height:1.1}
 .tracks .t small{font-weight:300}
-.tracks li button:hover{background:linear-gradient(90deg,rgba(239,192,208,.07),transparent)}
+.tracks li button:hover{background:linear-gradient(90deg,rgba(255,90,36,.08),transparent)}
 .tracks .src{border-radius:99px;font-weight:300}
 .eq i{width:2px}
 /* flyers */
@@ -328,15 +326,15 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .fl figcaption span:first-child{color:var(--tx)}
 /* rider */
 .stage{border-radius:8px}
-.stage .eq-g.hot rect.b{fill:#1b1519}
+.stage .eq-g.hot rect.b{fill:#1f130e}
 .setup .q{font-weight:300;font-style:italic;font-size:46px}
 .setup b{font-weight:500}
 .setup span{font-weight:300}
-.warn{border-radius:8px;border-color:rgba(239,192,208,.5)}
+.warn{border-radius:8px;border-color:rgba(255,90,36,.55)}
 .hosp{border-radius:8px;overflow:hidden}
 .hosp .ic{font-weight:300;font-style:italic;font-size:52px}
 .hosp h4{font-weight:400;text-transform:none;font-size:30px}
-.hosp>div:hover{background:rgba(239,192,208,.05)}
+.hosp>div:hover{background:rgba(255,90,36,.06)}
 /* fotos */
 .gal{gap:12px}
 .gal figure{border-radius:6px}
@@ -349,6 +347,24 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .wa .big{font-weight:300;text-transform:none;font-size:clamp(36px,5vw,68px);line-height:1.04}
 .ct b{font-weight:400;text-transform:none;font-size:32px}
 .ct li a:hover{color:var(--ac)}
+
+/* ===== tipografía igual a la del logo: condensada, fina, mayúsculas ===== */
+:root{--ft:'Barlow Condensed','Arial Narrow',sans-serif}
+h2,.np h3,.tracks .t,.hosp h4,.wa .big,.ct b,.names b,.menu a,.quote,.mq span,.tl .y,.setup .q,.hosp .ic,.about p.lead{font-family:var(--ft);text-transform:uppercase;font-style:normal}
+h2{font-weight:300;letter-spacing:.015em;line-height:.94;font-size:clamp(58px,10.5vw,168px)}
+h2 em,.quote em{font-style:normal;font-weight:300}
+.np h3{font-weight:300;letter-spacing:.03em;font-size:clamp(40px,6.4vw,92px);line-height:.98}
+.tracks .t{font-weight:400;letter-spacing:.04em;font-size:clamp(26px,3.4vw,42px);line-height:1.05}
+.tracks .t small{font-family:var(--fb);text-transform:none;letter-spacing:0;font-weight:300}
+.mq span{font-weight:300;letter-spacing:.06em;font-size:clamp(34px,5.4vw,70px)}
+.quote{font-weight:300;letter-spacing:.02em;font-size:clamp(38px,6vw,92px);line-height:.98;max-width:18ch}
+.tl .y,.setup .q,.hosp .ic{font-weight:300;letter-spacing:.02em}
+.hosp h4{font-weight:400;letter-spacing:.06em;font-size:30px}
+.wa .big{font-weight:300;letter-spacing:.03em;font-size:clamp(40px,5.4vw,76px);line-height:.98}
+.ct b{font-weight:400;letter-spacing:.06em;font-size:32px}
+.names b{font-weight:400;letter-spacing:.08em;font-size:clamp(20px,2.3vw,28px)}
+.menu a{font-weight:300;letter-spacing:.03em}
+.about p.lead{font-family:var(--fb);text-transform:none;font-weight:300;font-size:clamp(20px,2.2vw,27px);line-height:1.45;letter-spacing:0}
 </style>
 </head>
 <body>
@@ -382,11 +398,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 <div class="hs" id="top">
 <header class="hh" id="hh">
   <div class="amb" aria-hidden="true"></div>
-  <svg class="arcs" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <path d="M250 780C250 360 520 240 640 240" /><path d="M1350 780C1350 360 1080 240 960 240" />
-    <path d="M110 800C110 300 470 130 640 130" /><path d="M1490 800C1490 300 1130 130 960 130" />
-  </svg>
-  <div class="logo-b" id="lg" role="img" aria-label="Faustino Larroucau"><div class="lgi" id="lgi"></div></div>
+  <div class="mk" id="mk" role="img" aria-label="Faustino Larroucau"><i></i></div>
   <img class="fig" id="fg" src="img/figura.webp" alt="Faustino Larroucau">
   <div class="in" id="hin">
     <div class="cta">
@@ -439,7 +451,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 
     <div class="player br rv" id="player">
       <div class="np">
-        <div class="cover"><img id="cov" alt="" hidden><img class="ph" src="img/logo.png" alt=""></div>
+        <div class="cover"><img id="cov" alt="" hidden><img class="ph" src="img/marca.png" alt=""></div>
         <div>
           <span class="mono" id="npK">Producción</span>
           <h3 id="npT">Cargando…</h3>
@@ -634,12 +646,13 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
 
 /* ---------- Portada en capas: baja con el scroll + parallax de mouse ---------- */
 (function(){
- var hs=$('.hs'),lg=$('#lg'),fg=$('#fg'),hin=$('#hin'),hh=$('#hh'),mx=0,my=0,cx=0,cy=0,p=0,on=true,busy=false;
+ var hs=$('.hs'),mk=$('#mk'),mkl=$$('i',mk),SC_=[1],SY=[.44],BY=[0],fg=$('#fg'),hin=$('#hin'),hh=$('#hh'),mx=0,my=0,cx=0,cy=0,p=0,on=true,busy=false;
  function paint(){
   busy=false;
   cx+=(mx-cx)*.08;cy+=(my-cy)*.08;
   var vh=innerHeight;
-  lg.style.transform='translate(calc(-50% + '+(cx*-18).toFixed(1)+'px),calc(-50% + '+(p*vh*.42+cy*-8).toFixed(1)+'px)) scale('+(1+p*.14).toFixed(3)+')';
+  for(var k=0;k<mkl.length;k++)mkl[k].style.transform='translate('+(cx*-(8+k*5)).toFixed(1)+'px,'+((BY[k]+p*SY[k])*vh+cy*-6).toFixed(1)+'px) scale('+(SC_[k]+p*.04*(k<2?k+1:0)).toFixed(3)+')';
+  var g=Math.round(11+p*187);mk.style.setProperty('--lc','rgb('+g+','+g+','+Math.round(13+p*180)+')');mk.style.setProperty('--ll','rgba(255,90,36,'+(.45-p*.2).toFixed(2)+')');
   fg.style.transform='translate(calc(-50% + '+(cx*10).toFixed(1)+'px),'+(p*vh*.2+cy*6).toFixed(1)+'px) scale('+(1+p*.05).toFixed(3)+')';
   hin.style.opacity=Math.max(0,1-p*2.2).toFixed(2);hin.style.transform='translateY('+(p*60).toFixed(1)+'px)';
   hh.style.opacity=p>.78?Math.max(0,1-(p-.78)*4.5).toFixed(2):1;
@@ -650,9 +663,6 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
  if(!reduce&&matchMedia('(hover:hover)').matches)addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;req()});
  if('IntersectionObserver' in window)new IntersectionObserver(function(e){on=e[0].isIntersecting;if(on)req()}).observe(hs);
  scroll();
- var lgi=$('#lgi'),cols=['#0b0b0d','#1c36d6','#d9648f','#7a6bd6'],ci=0,fl=false;
- function flip(){if(fl)return;fl=true;lgi.classList.remove('flip');void lgi.offsetWidth;lgi.classList.add('flip');setTimeout(function(){ci=(ci+1)%cols.length;lgi.style.setProperty('--lc',cols[ci])},480);setTimeout(function(){fl=false},1050)}
- lg.addEventListener('pointerenter',flip);lg.addEventListener('click',flip);
 })();
 
 /* ---------- Foto sobre mí: fotos que se funden despacio ---------- */
@@ -784,7 +794,7 @@ $$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(
   for(var i=0;i<n;i++){
    var v=b[Math.floor(i/n*b.length)],pulse=playing?1+.07*Math.sin(t/260+i*.5):1,h=Math.max(3,v*H*pulse*.9);
    var x=i*step,p=i/n,hv=hovX!==null&&Math.abs(x-hovX)<20;
-   ctx.fillStyle=p<=prog?'#efc0d0':(hv?'rgba(239,236,232,.6)':'rgba(239,236,232,.2)');
+   ctx.fillStyle=p<=prog?'#ff5a24':(hv?'rgba(239,236,232,.6)':'rgba(239,236,232,.2)');
    ctx.fillRect(x,(H-h)/2,2,h)}
  }
  function loop(t){if(!onScreen){ticking=false;return}
