@@ -274,7 +274,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .hh .mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.5px) 0 0/8px 8px;-webkit-mask-image:radial-gradient(70% 60% at 50% 45%,#000,transparent 85%);mask-image:radial-gradient(70% 60% at 50% 45%,#000,transparent 85%)}
 .hh .mk{position:absolute;left:50%;top:calc(50% + 44px);width:min(94vw,1180px,calc((100svh - 250px)*1.6));aspect-ratio:1600/998;will-change:transform;transform:translate(-50%,-50%);--lc:#f6f4ef;--ll:rgba(255,90,36,.45)}
 .hh .mk i{position:absolute;inset:0;will-change:transform;-webkit-mask:url(img/logo-azul.png) center/contain no-repeat;mask:url(img/logo-azul.png) center/contain no-repeat;background:var(--lc)}
-.hh .fr{position:absolute;left:-16.25%;top:-26.05%;width:132.5%;aspect-ratio:2120/1518;will-change:transform;}
+.hh .fr{position:absolute;left:-16.25%;top:-26.05%;width:132.5%;aspect-ratio:2120/1518;will-change:transform;-webkit-mask-image:linear-gradient(#000 0,#000 20%,transparent 52%);mask-image:linear-gradient(#000 0,#000 20%,transparent 52%)}
 .hh .fr b{position:absolute;inset:0;background:linear-gradient(90deg,#8fd8ff,#ffffff 50%,#8fd8ff);-webkit-mask:url(img/marco.png) center/100% 100% no-repeat;mask:url(img/marco.png) center/100% 100% no-repeat}
 .nav:not(.solid) .lg{opacity:0}
 .hh .fig img{display:block;width:100%;height:100%}
@@ -475,6 +475,9 @@ footer a:hover{color:#0a1550}
 .hh{background:radial-gradient(75% 52% at 50% -4%,rgba(44,96,238,.6),transparent 76%),radial-gradient(85% 46% at 50% 112%,rgba(255,106,44,.9),transparent 72%),linear-gradient(#071458,#0a2272)}
 .hh .jer{display:none}
 .hh .mesh{-webkit-mask-image:none;mask-image:none;opacity:.9}
+
+/* ===== frase final a lo largo ===== */
+.quote{max-width:none;font-size:clamp(22px,2.9vw,44px);line-height:1.12;letter-spacing:.05em}
 
 /* ===== botones más suaves (sin cambios bruscos) ===== */
 .btn:hover{background:rgba(255,255,255,.16);color:#fff;border-color:#fff}
@@ -792,7 +795,7 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
   cx+=(mx-cx)*.08;cy+=(my-cy)*.08;
   var vh=innerHeight;
   for(var k=0;k<mkl.length;k++)mkl[k].style.transform='translate('+(cx*-(8+k*5)).toFixed(1)+'px,'+((BY[k]+p*SY[k])*vh+cy*-6).toFixed(1)+'px) scale('+(SC_[k]+p*.04*(k<2?k+1:0)).toFixed(3)+')';
-  arcs.style.transform='translateY('+(p*vh*.3+cy*-5).toFixed(1)+'px)';
+  arcs.style.transform='translateY('+(p*vh*.5+cy*-5).toFixed(1)+'px)';
   jer.style.transform='translate('+(cx*-12).toFixed(1)+'px,'+(p*vh*.12+cy*-6).toFixed(1)+'px)';
   var g=Math.round(246-p*110);mk.style.setProperty('--lc','rgb('+g+','+g+','+Math.round(g-(1-p)*3)+')');mk.style.setProperty('--ll','rgba(255,90,36,'+(.45-p*.2).toFixed(2)+')');
   fg.style.transform='translate(calc(-50% + '+(cx*10).toFixed(1)+'px),'+(p*vh*.2+cy*6).toFixed(1)+'px) scale('+(1+p*.05).toFixed(3)+')';
