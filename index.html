@@ -365,6 +365,25 @@ h2 em,.quote em{font-style:normal;font-weight:300}
 .names b{font-weight:400;letter-spacing:.08em;font-size:clamp(20px,2.3vw,28px)}
 .menu a{font-weight:300;letter-spacing:.03em}
 .about p.lead{font-family:var(--fb);text-transform:none;font-weight:300;font-size:clamp(20px,2.2vw,27px);line-height:1.45;letter-spacing:0}
+
+/* ===== tamaños más chicos y delicados ===== */
+h2,.book h2{font-size:clamp(34px,5.4vw,84px);letter-spacing:.03em;line-height:1}
+.kick{margin-bottom:14px}
+.np h3{font-size:clamp(28px,3.8vw,54px)}
+.tracks .t{font-size:clamp(19px,2.2vw,28px);letter-spacing:.05em}
+.tracks li button{padding:15px 6px}
+.mq{padding:14px 0}
+.mq span{font-size:clamp(20px,2.8vw,36px);letter-spacing:.14em;gap:36px}
+.quote{font-size:clamp(26px,3.6vw,52px);letter-spacing:.04em;max-width:24ch}
+.tl .y{font-size:36px}
+.setup .q{font-size:32px}
+.hosp .ic{font-size:36px}
+.hosp h4{font-size:22px}
+.wa .big{font-size:clamp(28px,3.6vw,50px)}
+.ct b{font-size:24px}
+.names b{font-size:clamp(16px,1.7vw,21px)}
+.menu a{font-size:clamp(34px,8.5vw,60px)}
+.sec{padding:clamp(64px,9vw,120px) 0}
 </style>
 </head>
 <body>
@@ -400,10 +419,10 @@ h2 em,.quote em{font-style:normal;font-weight:300}
   <div class="amb" aria-hidden="true"></div>
   <div class="mk" id="mk" role="img" aria-label="Faustino Larroucau">
     <svg class="arcs" id="arcs" viewBox="0 0 1600 1600" aria-hidden="true">
-      <defs><linearGradient id="gA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a24" stop-opacity=".9"/><stop offset="1" stop-color="#ff5a24" stop-opacity="0"/></linearGradient></defs>
-      <path d="M120 1480C120 560 520 110 800 110C1080 110 1480 560 1480 1480"/>
-      <path d="M300 1420C300 680 560 270 800 270C1040 270 1300 680 1300 1420"/>
-      <path d="M-70 1520C-70 420 440 -50 800 -50C1160 -50 1670 420 1670 1520"/>
+      <defs><linearGradient id="gA" gradientUnits="userSpaceOnUse" x1="0" y1="60" x2="0" y2="1500"><stop offset="0" stop-color="#ff5a24" stop-opacity=".95"/><stop offset="1" stop-color="#ff5a24" stop-opacity="0"/></linearGradient></defs>
+      <path d="M720 261H246V561M880 1339H1354V1039M1214 261H1354V401M386 1339H246V1199"/>
+      <path d="M720 191H176V591M880 1409H1424V1009M1214 191H1424V371M386 1409H176V1229"/>
+      <path d="M720 111H96V621M880 1489H1504V979M1214 111H1504V341M386 1489H96V1259"/>
     </svg>
     <i></i>
   </div>
@@ -532,7 +551,7 @@ h2 em,.quote em{font-style:normal;font-weight:300}
     </div>
 
     <div class="kick mono rv" style="margin-top:clamp(70px,10vw,130px)"><b>·</b> Hospitalidad</div>
-    <h2 class="rv" style="font-size:clamp(46px,8vw,120px)">Hospitality<br><em>rider</em></h2>
+    <h2 class="rv">Hospitality<br><em>rider</em></h2>
     <div class="hosp rv">
       <div><div class="ic">01</div><h4>Alojamiento</h4><p>Habitación doble.</p></div>
       <div><div class="ic">02</div><h4>Check in / out</h4><p>Acorde al tiempo de permanencia.</p></div>
@@ -614,7 +633,7 @@ var FLYERS=[
   {src:'img/flyers/12-techno-time-2017-05.jpg',title:'Techno Time 2',date:'13 May 2017'}
 ];
 var NAMES=['Gustin','Tonaco','Martín Huergo','JP Sgalia','Mario Puccio','Martín Gardoqui','Fernando Ferreyra','Lisandro','Julián Nates','Ignacio Berardi','Melodiam','Simbad','Lio Q','Pedro D’Alessandro','Mink','Shahar','Tekko','Camila Díaz','Nandu'];
-var GENRES=['Melodic House','Deep House','Progressive House','Indie Dance','Techno'];
+var GENRES=['Progressive House','Melodic House','Deep House','Indie Dance','Techno'];
 var MXP='https://thumbnailer.mixcloud.com/unsafe/300x300/extaudio/';
 var T=[
  {t:'Tanguito',s:'Original Mix',k:'prod',y:2026,src:'sc',u:'faustinolarroucau/tanguito-faustino-larroucau'},
