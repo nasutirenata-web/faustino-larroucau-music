@@ -597,10 +597,9 @@ footer a:hover{color:#0a1550}
     </div>
 
     <div class="filt rv" id="filt">
-      <button class="on" data-f="all">Todo</button>
-      <button data-f="prod">Temas</button>
-      <button data-f="remix">Remixes</button>
-      <button data-f="set">Sets &amp; mixes</button>
+      <button data-f="remix">Remix</button>
+      <button class="on" data-f="prod">Producciones propias</button>
+      <button data-f="set">Sets</button>
     </div>
     <ol class="tracks rv" id="tracks"></ol>
 
@@ -858,7 +857,7 @@ $$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(
 (function(){
  var list=$('#tracks'),playerEl=$('#player'),cov=$('#cov'),npT=$('#npT'),npS=$('#npS'),npK=$('#npK'),
      tc=$('#tc'),td=$('#td'),playB=$('#play'),ico=$('#icoPlay'),cv=$('#wave'),mxbox=$('#mxbox');
- var filter='all',cur=0,playing=false,prog=0,dur=0,w=null,ready=false,pending=null,hovX=null;
+ var filter='prod',cur=0,playing=false,prog=0,dur=0,w=null,ready=false,pending=null,hovX=null;
  var PLAY='M7 4v16l13-8z',PAUSE='M6 4h4v16H6zM14 4h4v16h-4z';
 
  function fmt(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);return m+':'+('0'+(s%60)).slice(-2)}
@@ -874,7 +873,7 @@ $$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(
  function setPlaying(p){playing=p;ico.innerHTML='<path d="'+(p?PAUSE:PLAY)+'"/>';playB.setAttribute('aria-label',p?'Pausar':'Reproducir');
   $$('li',list).forEach(function(li){var on=li.firstChild.dataset.i==cur;li.classList.toggle('pl',on&&p)})}
 
- function meta(t){var L=$('#npL');if(L)L.href=t.src==='sc'?'https://soundcloud.com/'+t.u:'https://www.mixcloud.com'+t.u;npT.textContent=t.t;npS.textContent=t.s||'';npK.textContent=(t.k==='prod'?'Tema':t.k==='remix'?'Remix':'Set')+' · '+t.y;
+ function meta(t){var L=$('#npL');if(L)L.href=t.src==='sc'?'https://soundcloud.com/'+t.u:'https://www.mixcloud.com'+t.u;npT.textContent=t.t;npS.textContent=t.s||'';npK.textContent=(t.k==='prod'?'Producción propia':t.k==='remix'?'Remix':'Set')+' · '+t.y;
   if(t.src==='mx'){cov.src=MXP+t.p;cov.hidden=false}else{cov.hidden=true;cov.removeAttribute('src')}}
 
  function select(i,auto){
