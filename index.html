@@ -269,19 +269,23 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .menu a small{color:var(--ac)}
 /* portada en capas (estilo Miss Monique): logo atrás, figura adelante, todo baja con el scroll */
 .hs{height:185svh;position:relative}
-.hh{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;background:#f7f6f3}
-.hh .amb{display:none}
-.hh .mk{position:absolute;left:50%;top:50%;width:min(94vw,1180px);aspect-ratio:1600/998;will-change:transform;transform:translate(-50%,-50%);--lc:#0b0b0d;--ll:rgba(255,90,36,.45)}
+.hh{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;background:radial-gradient(62% 46% at 16% 6%,rgba(34,162,238,.8),transparent 72%),radial-gradient(52% 40% at 90% 16%,rgba(38,148,232,.55),transparent 72%),radial-gradient(72% 46% at 52% 108%,rgba(238,56,34,.9),transparent 72%),radial-gradient(40% 32% at 14% 104%,rgba(255,150,44,.65),transparent 72%),linear-gradient(#060712,#0c0a11)}
+.hh .jer{position:absolute;inset:0;margin:auto;width:min(104svh,104vw);height:auto;max-width:none;opacity:.22;pointer-events:none;will-change:transform}
+.hh .mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.5px) 0 0/8px 8px;-webkit-mask-image:radial-gradient(70% 60% at 50% 45%,#000,transparent 85%);mask-image:radial-gradient(70% 60% at 50% 45%,#000,transparent 85%)}
+.hh .mk{position:absolute;left:50%;top:calc(50% + 44px);width:min(94vw,1180px,calc((100svh - 250px)*1.6));aspect-ratio:1600/998;will-change:transform;transform:translate(-50%,-50%);--lc:#f6f4ef;--ll:rgba(255,90,36,.45)}
 .hh .mk i{position:absolute;inset:0;will-change:transform;-webkit-mask:url(img/logo-azul.png) center/contain no-repeat;mask:url(img/logo-azul.png) center/contain no-repeat;background:var(--lc)}
-.hh .arcs{position:absolute;left:0;top:50%;width:100%;height:auto;overflow:visible;fill:none;stroke:url(#gA);stroke-width:2.2;will-change:transform;transform:translateY(-50%)}
+.hh .fr{position:absolute;left:-16.25%;top:-26.05%;width:132.5%;aspect-ratio:2120/1518;will-change:transform;-webkit-mask-image:linear-gradient(#000 0,#000 22%,transparent 62%);mask-image:linear-gradient(#000 0,#000 22%,transparent 62%)}
+.hh .fr b{position:absolute;inset:0;background:linear-gradient(90deg,#8fd8ff,#ffffff 50%,#8fd8ff);-webkit-mask:url(img/marco.png) center/100% 100% no-repeat;mask:url(img/marco.png) center/100% 100% no-repeat}
 .nav:not(.solid) .lg{opacity:0}
-.hh .fig{position:absolute;left:50%;bottom:0;height:90svh;max-width:none;will-change:transform;transform:translateX(-50%);
+.hh .fig img{display:block;width:100%;height:100%}
+.hh .fig .hole{position:absolute;left:34.1%;top:34%;width:18.2%;aspect-ratio:1028/998;background:#fff;-webkit-mask:url(img/marca.png) center/contain no-repeat;mask:url(img/marca.png) center/contain no-repeat;opacity:.95}
+.hh .fig{position:absolute;left:50%;bottom:0;height:90svh;aspect-ratio:680/963;max-width:none;will-change:transform;transform:translateX(-50%);
   -webkit-mask-image:linear-gradient(#000 76%,transparent 100%);mask-image:linear-gradient(#000 76%,transparent 100%);filter:drop-shadow(0 14px 36px rgba(30,26,22,.28));pointer-events:none}
-.hh .mono{color:#5b5c64}
-.hh .btn:not(.pri){border-color:rgba(22,23,28,.45);color:#16171c}
-.hh .btn:not(.pri):hover{background:#16171c;color:#fff}
-.nav:not(.solid) ul a{color:#3a3b42}
-.nav:not(.solid) .burger{border-color:rgba(22,23,28,.4);color:#16171c}
+.hh .mono{color:rgba(255,255,255,.8)}
+.hh .btn:not(.pri){border-color:rgba(255,255,255,.6);color:#fff}
+.hh .btn:not(.pri):hover{background:#fff;color:#111}
+.nav:not(.solid) ul a{color:rgba(255,255,255,.88)}
+.nav:not(.solid) .burger{border-color:rgba(255,255,255,.5);color:#fff}
 .hh .top{position:absolute;top:84px;left:var(--gut);right:var(--gut);display:flex;justify-content:space-between;gap:20px;z-index:3}
 .hh .in{position:absolute;left:0;right:0;bottom:9svh;z-index:4;display:flex;flex-direction:column;align-items:flex-start;gap:20px;padding:0 var(--gut);text-align:left;will-change:transform,opacity}
 .hh .cta{justify-content:flex-start}
@@ -384,6 +388,26 @@ h2,.book h2{font-size:clamp(34px,5.4vw,84px);letter-spacing:.03em;line-height:1}
 .names b{font-size:clamp(16px,1.7vw,21px)}
 .menu a{font-size:clamp(34px,8.5vw,60px)}
 .sec{padding:clamp(64px,9vw,120px) 0}
+
+/* ===== set up con fotos reales del presskit + fotos del presskit ===== */
+.about .who{margin-bottom:18px;color:var(--ac)}
+.names .lbl{padding:6px var(--gut) 10px;text-transform:none;letter-spacing:.08em;font-size:12px;line-height:1.7}
+.stage .gear{display:flex;align-items:flex-end;justify-content:center;gap:1.6%;padding:6px 0}
+.stage .gear img{width:19%;height:auto;transition:opacity .3s,filter .3s}
+.stage .gear img.mx{width:21%}
+.stage .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.stage .chips span{padding:7px 14px;border:1px solid var(--line);border-radius:99px;transition:border-color .25s,color .25s}
+.stage .gear img.hot{filter:drop-shadow(0 0 16px rgba(255,90,36,.55))}
+.stage.dim .gear img:not(.hot){opacity:.3}
+.stage .chips span.hot{border-color:var(--ac);color:var(--ac)}
+.stage.dim .chips span:not(.hot){opacity:.4}
+.pk{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.pk figure{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:6px;cursor:zoom-in}
+.pk img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.pk figure:hover img{transform:scale(1.04)}
+.pk .dl{position:absolute;left:12px;bottom:12px;z-index:4;font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:9px 12px;border-radius:99px;background:rgba(246,243,238,.88);color:#16171c;transition:background .2s,color .2s}
+.pk .dl:hover{background:#16171c;color:#fff}
+@media (max-width:760px){.pk{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -416,17 +440,13 @@ h2,.book h2{font-size:clamp(34px,5.4vw,84px);letter-spacing:.03em;line-height:1}
 <!-- HERO -->
 <div class="hs" id="top">
 <header class="hh" id="hh">
-  <div class="amb" aria-hidden="true"></div>
+  <div class="mesh" aria-hidden="true"></div>
+  <img class="jer" id="jer" src="img/estampado.webp" alt="" aria-hidden="true">
   <div class="mk" id="mk" role="img" aria-label="Faustino Larroucau">
-    <svg class="arcs" id="arcs" viewBox="0 0 1600 1600" aria-hidden="true">
-      <defs><linearGradient id="gA" gradientUnits="userSpaceOnUse" x1="0" y1="60" x2="0" y2="1500"><stop offset="0" stop-color="#ff5a24" stop-opacity=".95"/><stop offset="1" stop-color="#ff5a24" stop-opacity="0"/></linearGradient></defs>
-      <path d="M720 261H246V561M880 1339H1354V1039M1214 261H1354V401M386 1339H246V1199"/>
-      <path d="M720 191H176V591M880 1409H1424V1009M1214 191H1424V371M386 1409H176V1229"/>
-      <path d="M720 111H96V621M880 1489H1504V979M1214 111H1504V341M386 1489H96V1259"/>
-    </svg>
+    <div class="fr" id="arcs" aria-hidden="true"><b></b></div>
     <i></i>
   </div>
-  <img class="fig" id="fg" src="img/figura.webp" alt="Faustino Larroucau">
+  <div class="fig" id="fg"><img src="img/figura3.webp" alt="Faustino Larroucau"></div>
   <div class="in" id="hin">
     <div class="cta">
       <a class="btn pri" href="#booking">Booking</a>
@@ -443,7 +463,7 @@ h2,.book h2{font-size:clamp(34px,5.4vw,84px);letter-spacing:.03em;line-height:1}
 <section class="sec lt" id="sobre">
   <div class="wrap">
     <div class="kick mono rv"><b>01</b> Sobre mí</div>
-    <h2 class="rv">Melodía,<br><em>atmósfera</em><br>y groove</h2>
+    <h2 class="rv">Tocar con<br><em>el alma</em></h2>
     <div class="about">
       <div class="pic br rv" id="pic">
         <img class="on" src="img/about-1.jpg" alt="Faustino Larroucau">
@@ -451,22 +471,23 @@ h2,.book h2{font-size:clamp(34px,5.4vw,84px);letter-spacing:.03em;line-height:1}
         <img src="img/about-3.jpg" alt="" loading="lazy">
       </div>
       <div class="txt rv">
+        <div class="who mono">Faustino Larroucau · DJ &amp; Producer | Argentina</div>
         <p class="lead">Faustino Larroucau es DJ y productor argentino, oriundo de San Nicolás de los Arroyos, ciudad donde nació y creció.</p>
         <p>Su conexión con la música electrónica comenzó a los 11 años, cuando, influenciado por un amigo, descubrió el Psy Trance. Aquella primera experiencia despertó una curiosidad que, con el paso del tiempo, lo llevó a explorar y profundizar en los distintos géneros y vertientes de la escena electrónica.</p>
         <p>A lo largo de su recorrido musical fue desarrollando una identidad sonora propia, encontrando una conexión especial con el Melodic House, estilo que hoy define gran parte de su esencia artística. En sus performances combina matices de Deep House, Progressive House, Indie Dance y Techno, construyendo atmósferas envolventes y sets que transitan entre la profundidad melódica, los sonidos orgánicos y la energía progresiva.</p>
         <ul class="tl">
-          <li><span class="y">11</span><span class="d">años tenía cuando descubrió el Psy Trance y arrancó todo.</span></li>
-          <li><span class="y">2022</span><span class="d">DJ residente de Laguna Azul, en Córdoba, donde compartió cabina con destacados artistas de la escena electrónica.</span></li>
-          <li><span class="y">Hoy</span><span class="d">DJ residente y co-creador de Home Music Experience, proyecto nacido en San Nicolás de los Arroyos, desde el cual impulsa el desarrollo de la escena electrónica local.</span></li>
+          <li><span class="y">2022</span><span class="d">En 2022 fue DJ residente de Laguna Azul, en Córdoba, donde tuvo la oportunidad de compartir cabina con destacados artistas de la escena electrónica.</span></li>
+          <li><span class="y">Hoy</span><span class="d">Actualmente es DJ residente y co-creador de Home Music Experience, proyecto nacido en San Nicolás de los Arroyos, desde el cual continúa impulsando y formando parte del desarrollo de la escena electrónica local.</span></li>
         </ul>
       </div>
     </div>
-    <p class="quote rv">Conexión entre el <em>sonido</em> y las <em>emociones</em></p>
+    <p class="quote rv">Su propuesta musical busca generar una conexión entre el <em>sonido</em> y las <em>emociones</em>, creando experiencias donde la melodía, la atmósfera y el groove se convierten en protagonistas.</p>
   </div>
   <div class="names rv">
-    <div class="lbl mono">Compartió cabina con</div>
+    <div class="lbl mono">A lo largo de su trayectoria ha compartido cabina con artistas nacionales e internacionales como</div>
     <div class="row" id="nm1"></div>
     <div class="row r" id="nm2"></div>
+    <div class="lbl mono">…entre otros.</div>
   </div>
 </section>
 
@@ -528,35 +549,33 @@ h2,.book h2{font-size:clamp(34px,5.4vw,84px);letter-spacing:.03em;line-height:1}
     <h2 class="rv">Rider<br><em>técnico</em></h2>
     <div class="rider">
       <div class="stage br rv" id="stage">
-        <svg viewBox="0 0 640 250" role="img" aria-label="Esquema del setup: 4 CDJ y un mixer en el centro">
-          <g class="eq-g" data-k="cdj"><rect class="b" x="6" y="24" width="124" height="132" rx="4"/><circle cx="68" cy="84" r="40"/><circle cx="68" cy="84" r="9"/><line class="ln" x1="22" y1="140" x2="114" y2="140"/></g>
-          <g class="eq-g" data-k="cdj"><rect class="b" x="140" y="24" width="124" height="132" rx="4"/><circle cx="202" cy="84" r="40"/><circle cx="202" cy="84" r="9"/><line class="ln" x1="156" y1="140" x2="248" y2="140"/></g>
-          <g class="eq-g" data-k="mix"><rect class="b" x="274" y="14" width="92" height="152" rx="4"/><line class="ln" x1="294" y1="40" x2="294" y2="116"/><line class="ln" x1="320" y1="40" x2="320" y2="116"/><line class="ln" x1="346" y1="40" x2="346" y2="116"/><rect class="b" x="288" y="86" width="12" height="10"/><rect class="b" x="314" y="60" width="12" height="10"/><rect class="b" x="340" y="76" width="12" height="10"/><line class="ln" x1="292" y1="146" x2="348" y2="146"/></g>
-          <g class="eq-g" data-k="cdj"><rect class="b" x="376" y="24" width="124" height="132" rx="4"/><circle cx="438" cy="84" r="40"/><circle cx="438" cy="84" r="9"/><line class="ln" x1="392" y1="140" x2="484" y2="140"/></g>
-          <g class="eq-g" data-k="cdj"><rect class="b" x="510" y="24" width="124" height="132" rx="4"/><circle cx="572" cy="84" r="40"/><circle cx="572" cy="84" r="9"/><line class="ln" x1="526" y1="140" x2="618" y2="140"/></g>
-          <g class="eq-g" data-k="mon"><rect class="b" x="60" y="196" width="46" height="46" rx="4"/><circle cx="83" cy="219" r="14"/><rect class="b" x="534" y="196" width="46" height="46" rx="4"/><circle cx="557" cy="219" r="14"/><rect class="b" x="284" y="190" width="72" height="54" rx="4"/><circle cx="320" cy="217" r="20"/></g>
-          <text class="lab" x="68" y="12">CDJ</text><text class="lab" x="202" y="12">CDJ</text><text class="lab" x="320" y="8" text-anchor="middle">DJM</text><text class="lab" x="438" y="12">CDJ</text><text class="lab" x="572" y="12">CDJ</text>
-          <text class="lab" x="120" y="224">Monitor</text><text class="lab" x="378" y="224">Sub</text><text class="lab" x="458" y="224">Monitor</text>
-        </svg>
-        <div class="mono" style="margin-top:14px">Pasá el mouse por cada equipo</div>
+        <div class="gear">
+          <img class="eq-g" data-k="cdj" src="img/cdj.png" alt="Pioneer CDJ2000Nxs2">
+          <img class="eq-g" data-k="cdj" src="img/cdj.png" alt="" aria-hidden="true">
+          <img class="eq-g mx" data-k="mix" src="img/mixer.png" alt="Pioneer DJM900Nxs2">
+          <img class="eq-g" data-k="cdj" src="img/cdj.png" alt="" aria-hidden="true">
+          <img class="eq-g" data-k="cdj" src="img/cdj.png" alt="" aria-hidden="true">
+        </div>
+        <div class="chips"><span class="eq-g mono" data-k="mon">High Quality Monitors x2</span><span class="eq-g mono" data-k="mon">Low Subwoofer x1</span></div>
+        <div class="mono" style="margin-top:14px">Set up · pasá el mouse por cada equipo</div>
       </div>
       <div class="rv">
         <ul class="setup" id="setup">
-          <li data-k="mix"><span class="q">x1</span><div><b>Pioneer DJM900Nxs2</b><span>Mixer</span></div></li>
-          <li data-k="cdj"><span class="q">x4</span><div><b>Pioneer CDJ2000Nxs2</b><span>Conectadas en LINK con cable Ethernet, o set up superior.</span></div></li>
-          <li data-k="mon"><span class="q">x2+1</span><div><b>High Quality Monitors x2 + Low Subwoofer x1</b><span>Conectados a la salida BOOTH del mixer.</span></div></li>
+          <li data-k="mix"><span class="q">x1</span><div><b>Pioneer DJM900Nxs2</b></div></li>
+          <li data-k="cdj"><span class="q">x4</span><div><b>Pioneer CDJ2000Nxs2</b><span>(Conectadas en LINK con cable ETHERNET.) o set up superior</span></div></li>
+          <li data-k="mon"><span class="q">x2+1</span><div><b>High Quality Monitors x2 + Low Subwoofer x1</b><span>(Conectados a la salida BOOTH del Mixer.)</span></div></li>
         </ul>
-        <div class="warn"><span class="mono">Importante</span><span>Prueba de sonido antes de comenzar el evento.</span></div>
+        <div class="warn"><span class="mono">Importante</span><span>Prueba de sonido antes de comenzar el evento</span></div>
       </div>
     </div>
 
     <div class="kick mono rv" style="margin-top:clamp(70px,10vw,130px)"><b>·</b> Hospitalidad</div>
-    <h2 class="rv">Hospitality<br><em>rider</em></h2>
+    <h2 class="rv">Hospi<em>talidad</em></h2>
     <div class="hosp rv">
       <div><div class="ic">01</div><h4>Alojamiento</h4><p>Habitación doble.</p></div>
-      <div><div class="ic">02</div><h4>Check in / out</h4><p>Acorde al tiempo de permanencia.</p></div>
+      <div><div class="ic">02</div><h4>Check in - Check out</h4><p>Acorde al tiempo de permanencia.</p></div>
       <div><div class="ic">03</div><h4>Traslados</h4><p>Antes y después del evento.</p></div>
-      <div><div class="ic">04</div><h4>Bebidas</h4><p>Agua mineral y bebidas alcohólicas durante el evento.</p></div>
+      <div><div class="ic">04</div><h4>Bebidas</h4><p>Agua Mineral y Bebidas alcohólicas durante el evento.</p></div>
     </div>
   </div>
 </section>
@@ -572,6 +591,13 @@ h2,.book h2{font-size:clamp(34px,5.4vw,84px);letter-spacing:.03em;line-height:1}
       <figure data-big="img/g2.jpg"><img src="img/g2.jpg" alt="Faustino Larroucau en cabina" loading="lazy"><a class="dl" href="descargas/faustino-larroucau-02-cabina.jpeg" download>↓ Original</a></figure>
       <figure data-big="img/g5.jpg"><img src="img/g5.jpg" alt="Faustino Larroucau, retrato" loading="lazy"><a class="dl" href="descargas/faustino-larroucau-05-estudio.jpeg" download>↓ Original</a></figure>
       <figure data-big="img/g4.jpg"><img src="img/g4.jpg" alt="Faustino Larroucau, neón y luz azul" loading="lazy"><a class="dl" href="descargas/faustino-larroucau-04-club.jpeg" download>↓ Original</a></figure>
+    </div>
+    <div class="kick mono rv" style="margin-top:56px"><b>·</b> Fotos del presskit</div>
+    <div class="pk rv" id="pk">
+      <figure data-big="img/pk-1.jpg"><img src="img/pk-1.jpg" alt="Faustino Larroucau señalando al cielo" loading="lazy"><a class="dl" href="descargas/presskit-foto-1.jpg" download>↓ Original</a></figure>
+      <figure data-big="img/pk-2.jpg"><img src="img/pk-2.jpg" alt="Faustino Larroucau en cabina" loading="lazy"><a class="dl" href="descargas/presskit-foto-2.jpg" download>↓ Original</a></figure>
+      <figure data-big="img/pk-3.jpg"><img src="img/pk-3.jpg" alt="Faustino Larroucau tocando bajo luces de neón" loading="lazy"><a class="dl" href="descargas/presskit-foto-3.jpg" download>↓ Original</a></figure>
+      <figure data-big="img/pk-4.jpg"><img src="img/pk-4.jpg" alt="Faustino Larroucau, retrato" loading="lazy"><a class="dl" href="descargas/presskit-foto-4.jpg" download>↓ Original</a></figure>
     </div>
     <div class="dls rv">
       <a class="btn" href="descargas/logo-faustino-larroucau-blanco.png" download>↓ Logo PNG (blanco)</a>
@@ -593,7 +619,8 @@ h2,.book h2{font-size:clamp(34px,5.4vw,84px);letter-spacing:.03em;line-height:1}
         <a class="btn pri" href="https://wa.me/5493364301074" target="_blank" rel="noopener">WhatsApp +54 9 336 430 1074 ↗</a>
       </div>
       <ul class="ct rv">
-        <li><a href="mailto:Faus_laribera@hotmail.com"><b>Mail</b><span>Faus_laribera@hotmail.com</span></a></li>
+        <li><a href="tel:+5493364301074"><b>Teléfono personal</b><span>+54 9 3364301074</span></a></li>
+        <li><a href="mailto:Faus_laribera@hotmail.com"><b>E-mail</b><span>Faus_laribera@hotmail.com</span></a></li>
         <li><a href="https://www.instagram.com/faustinolarroucau/" target="_blank" rel="noopener"><b>Instagram</b><span>@faustinolarroucau</span></a></li>
         <li><a href="https://soundcloud.com/faustinolarroucau" target="_blank" rel="noopener"><b>SoundCloud</b><span>/faustinolarroucau</span></a></li>
         <li><a href="https://www.mixcloud.com/faustino-larroucau/" target="_blank" rel="noopener"><b>Mixcloud</b><span>/faustino-larroucau</span></a></li>
@@ -673,14 +700,15 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
 
 /* ---------- Portada en capas: baja con el scroll + parallax de mouse ---------- */
 (function(){
- var hs=$('.hs'),mk=$('#mk'),mkl=$$('i',mk),arcs=$('#arcs'),SC_=[1],SY=[.44],BY=[0],fg=$('#fg'),hin=$('#hin'),hh=$('#hh'),mx=0,my=0,cx=0,cy=0,p=0,on=true,busy=false;
+ var hs=$('.hs'),mk=$('#mk'),mkl=$$('i',mk),arcs=$('#arcs'),jer=$('#jer'),SC_=[1],SY=[.44],BY=[0],fg=$('#fg'),hin=$('#hin'),hh=$('#hh'),mx=0,my=0,cx=0,cy=0,p=0,on=true,busy=false;
  function paint(){
   busy=false;
   cx+=(mx-cx)*.08;cy+=(my-cy)*.08;
   var vh=innerHeight;
   for(var k=0;k<mkl.length;k++)mkl[k].style.transform='translate('+(cx*-(8+k*5)).toFixed(1)+'px,'+((BY[k]+p*SY[k])*vh+cy*-6).toFixed(1)+'px) scale('+(SC_[k]+p*.04*(k<2?k+1:0)).toFixed(3)+')';
-  arcs.style.transform='translateY(calc(-50% + '+(-p*vh*.16+cy*-5).toFixed(1)+'px))';
-  var g=Math.round(11+p*187);mk.style.setProperty('--lc','rgb('+g+','+g+','+Math.round(13+p*180)+')');mk.style.setProperty('--ll','rgba(255,90,36,'+(.45-p*.2).toFixed(2)+')');
+  arcs.style.transform='translateY('+(p*vh*.3+cy*-5).toFixed(1)+'px)';
+  jer.style.transform='translate('+(cx*-12).toFixed(1)+'px,'+(p*vh*.12+cy*-6).toFixed(1)+'px)';
+  var g=Math.round(246-p*110);mk.style.setProperty('--lc','rgb('+g+','+g+','+Math.round(g-(1-p)*3)+')');mk.style.setProperty('--ll','rgba(255,90,36,'+(.45-p*.2).toFixed(2)+')');
   fg.style.transform='translate(calc(-50% + '+(cx*10).toFixed(1)+'px),'+(p*vh*.2+cy*6).toFixed(1)+'px) scale('+(1+p*.05).toFixed(3)+')';
   hin.style.opacity=Math.max(0,1-p*2.2).toFixed(2);hin.style.transform='translateY('+(p*60).toFixed(1)+'px)';
   hh.style.opacity=p>.78?Math.max(0,1-(p-.78)*4.5).toFixed(2):1;
