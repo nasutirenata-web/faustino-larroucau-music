@@ -272,8 +272,8 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .hh{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;background:#f7f6f3}
 .hh .amb{display:none}
 .hh .mk{position:absolute;left:50%;top:50%;width:min(94vw,1180px);aspect-ratio:1600/998;will-change:transform;transform:translate(-50%,-50%);--lc:#0b0b0d;--ll:rgba(255,90,36,.45)}
-.hh .mk i{position:absolute;inset:0;will-change:transform;-webkit-mask:url(img/logo-linea.png) center/contain no-repeat;mask:url(img/logo-linea.png) center/contain no-repeat;background:var(--lc)}
-.hh .mk i.ln{background:var(--ll)}
+.hh .mk i{position:absolute;inset:0;will-change:transform;-webkit-mask:url(img/logo-azul.png) center/contain no-repeat;mask:url(img/logo-azul.png) center/contain no-repeat;background:var(--lc)}
+.hh .arcs{position:absolute;left:0;top:50%;width:100%;height:auto;overflow:visible;fill:none;stroke:url(#gA);stroke-width:2.2;will-change:transform;transform:translateY(-50%)}
 .nav:not(.solid) .lg{opacity:0}
 .hh .fig{position:absolute;left:50%;bottom:0;height:90svh;max-width:none;will-change:transform;transform:translateX(-50%);
   -webkit-mask-image:linear-gradient(#000 76%,transparent 100%);mask-image:linear-gradient(#000 76%,transparent 100%);filter:drop-shadow(0 14px 36px rgba(30,26,22,.28));pointer-events:none}
@@ -398,7 +398,15 @@ h2 em,.quote em{font-style:normal;font-weight:300}
 <div class="hs" id="top">
 <header class="hh" id="hh">
   <div class="amb" aria-hidden="true"></div>
-  <div class="mk" id="mk" role="img" aria-label="Faustino Larroucau"><i></i></div>
+  <div class="mk" id="mk" role="img" aria-label="Faustino Larroucau">
+    <svg class="arcs" id="arcs" viewBox="0 0 1600 1600" aria-hidden="true">
+      <defs><linearGradient id="gA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a24" stop-opacity=".9"/><stop offset="1" stop-color="#ff5a24" stop-opacity="0"/></linearGradient></defs>
+      <path d="M120 1480C120 560 520 110 800 110C1080 110 1480 560 1480 1480"/>
+      <path d="M300 1420C300 680 560 270 800 270C1040 270 1300 680 1300 1420"/>
+      <path d="M-70 1520C-70 420 440 -50 800 -50C1160 -50 1670 420 1670 1520"/>
+    </svg>
+    <i></i>
+  </div>
   <img class="fig" id="fg" src="img/figura.webp" alt="Faustino Larroucau">
   <div class="in" id="hin">
     <div class="cta">
@@ -646,12 +654,13 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
 
 /* ---------- Portada en capas: baja con el scroll + parallax de mouse ---------- */
 (function(){
- var hs=$('.hs'),mk=$('#mk'),mkl=$$('i',mk),SC_=[1],SY=[.44],BY=[0],fg=$('#fg'),hin=$('#hin'),hh=$('#hh'),mx=0,my=0,cx=0,cy=0,p=0,on=true,busy=false;
+ var hs=$('.hs'),mk=$('#mk'),mkl=$$('i',mk),arcs=$('#arcs'),SC_=[1],SY=[.44],BY=[0],fg=$('#fg'),hin=$('#hin'),hh=$('#hh'),mx=0,my=0,cx=0,cy=0,p=0,on=true,busy=false;
  function paint(){
   busy=false;
   cx+=(mx-cx)*.08;cy+=(my-cy)*.08;
   var vh=innerHeight;
   for(var k=0;k<mkl.length;k++)mkl[k].style.transform='translate('+(cx*-(8+k*5)).toFixed(1)+'px,'+((BY[k]+p*SY[k])*vh+cy*-6).toFixed(1)+'px) scale('+(SC_[k]+p*.04*(k<2?k+1:0)).toFixed(3)+')';
+  arcs.style.transform='translateY(calc(-50% + '+(-p*vh*.16+cy*-5).toFixed(1)+'px))';
   var g=Math.round(11+p*187);mk.style.setProperty('--lc','rgb('+g+','+g+','+Math.round(13+p*180)+')');mk.style.setProperty('--ll','rgba(255,90,36,'+(.45-p*.2).toFixed(2)+')');
   fg.style.transform='translate(calc(-50% + '+(cx*10).toFixed(1)+'px),'+(p*vh*.2+cy*6).toFixed(1)+'px) scale('+(1+p*.05).toFixed(3)+')';
   hin.style.opacity=Math.max(0,1-p*2.2).toFixed(2);hin.style.transform='translateY('+(p*60).toFixed(1)+'px)';
