@@ -795,7 +795,7 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
   cx+=(mx-cx)*.08;cy+=(my-cy)*.08;
   var vh=innerHeight;
   for(var k=0;k<mkl.length;k++)mkl[k].style.transform='translate('+(cx*-(8+k*5)).toFixed(1)+'px,'+((BY[k]+p*SY[k])*vh+cy*-6).toFixed(1)+'px) scale('+(SC_[k]+p*.04*(k<2?k+1:0)).toFixed(3)+')';
-  arcs.style.transform='translateY('+(cy*-5).toFixed(1)+'px)';
+  arcs.style.transform=mkl[0].style.transform;
   jer.style.transform='translate('+(cx*-12).toFixed(1)+'px,'+(p*vh*.12+cy*-6).toFixed(1)+'px)';
   var g=Math.round(246-p*110);mk.style.setProperty('--lc','rgb('+g+','+g+','+Math.round(g-(1-p)*3)+')');mk.style.setProperty('--ll','rgba(255,90,36,'+(.45-p*.2).toFixed(2)+')');
   fg.style.transform='translate(calc(-50% + '+(cx*10).toFixed(1)+'px),'+(p*vh*.4+cy*6).toFixed(1)+'px) scale('+(1+p*.05).toFixed(3)+')';
