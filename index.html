@@ -471,6 +471,20 @@ footer a:hover{color:#0a1550}
 .lb .lbn.r{left:auto;right:20px}
 .lb .lbn[hidden]{display:none}
 .lbc{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#fff;padding:0 70px}
+/* ===== rider: filas con flecha que se abren; aviso con una sola letra ===== */
+.setup li{display:block;padding:0;border-bottom:1px solid var(--line);cursor:pointer}
+.setup li:hover,.setup li.hot{padding-left:0}
+.setup .row{display:flex;align-items:center;justify-content:space-between;width:100%;padding:20px 4px;text-align:left}
+.setup .q{font-size:34px}
+.setup .arr{width:12px;height:12px;border-right:1.5px solid var(--mut);border-bottom:1.5px solid var(--mut);transform:rotate(-45deg);transition:transform .35s,border-color .25s;margin-right:6px}
+.setup li:hover .arr,.setup li.openr .arr{border-color:var(--ac)}
+.setup li.openr .arr{transform:rotate(45deg)}
+.setup .det{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s ease,opacity .35s,padding .35s;padding:0 4px}
+.setup li.openr .det{max-height:180px;opacity:1;padding:0 4px 20px}
+.setup .det b{display:block;font-weight:500;font-size:17px;margin-bottom:2px}
+.setup .det span{display:block;color:var(--mut);font-size:15px;line-height:1.5}
+.warn{display:block;font-family:var(--fb);font-size:15px;font-weight:400;line-height:1.5;letter-spacing:0;text-transform:none}
+.warn span{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit}
 </style>
 </head>
 <body>
@@ -604,7 +618,7 @@ footer a:hover{color:#0a1550}
     <div class="kick mono rv"><b>03</b> Flyers</div>
     <h2 class="rv">En <em>cabina</em></h2>
   </div>
-  <div class="wrap"><div class="fl" id="fl"></div><p class="mono fl-hint">Pasá el mouse para abrir · Arrastrá para seguir → · Click para ampliar</p></div>
+  <div class="wrap"><div class="fl" id="fl"></div></div>
 </section>
 
 <!-- RIDER -->
@@ -622,15 +636,14 @@ footer a:hover{color:#0a1550}
           <img class="eq-g" data-k="cdj" src="img/cdj.png" alt="" aria-hidden="true">
         </div>
         <div class="chips"><span class="eq-g mono" data-k="mon">High Quality Monitors x2</span><span class="eq-g mono" data-k="mon">Low Subwoofer x1</span></div>
-        <div class="mono" style="margin-top:14px">Set up · pasá el mouse por cada equipo</div>
       </div>
       <div class="rv">
         <ul class="setup" id="setup">
-          <li data-k="mix"><span class="q">x1</span><div><b>Pioneer DJM900Nxs2</b></div></li>
-          <li data-k="cdj"><span class="q">x4</span><div><b>Pioneer CDJ2000Nxs2</b><span>(Conectadas en LINK con cable ETHERNET.) o set up superior</span></div></li>
-          <li data-k="mon"><span class="q">x2+1</span><div><b>High Quality Monitors x2 + Low Subwoofer x1</b><span>(Conectados a la salida BOOTH del Mixer.)</span></div></li>
+          <li data-k="mix"><button type="button" class="row" aria-expanded="false"><span class="q">x1</span><span class="arr" aria-hidden="true"></span></button><div class="det"><b>Pioneer DJM900Nxs2</b></div></li>
+          <li data-k="cdj"><button type="button" class="row" aria-expanded="false"><span class="q">x4</span><span class="arr" aria-hidden="true"></span></button><div class="det"><b>Pioneer CDJ2000Nxs2</b><span>(Conectadas en LINK con cable ETHERNET.) o set up superior</span></div></li>
+          <li data-k="mon"><button type="button" class="row" aria-expanded="false"><span class="q">x2+1</span><span class="arr" aria-hidden="true"></span></button><div class="det"><b>High Quality Monitors x2 + Low Subwoofer x1</b><span>(Conectados a la salida BOOTH del Mixer.)</span></div></li>
         </ul>
-        <div class="warn"><span class="mono">Importante</span><span>Prueba de sonido antes de comenzar el evento</span></div>
+        <div class="warn"><span>IMPORTANTE! Prueba de sonido antes de comenzar el evento</span></div>
       </div>
     </div>
 
@@ -814,7 +827,7 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
  var st=$('#stage'),gs=$$('.eq-g',st),ls=$$('#setup li');
  function hot(k){gs.forEach(function(g){g.classList.toggle('hot',!!k&&g.dataset.k===k)});ls.forEach(function(l){l.classList.toggle('hot',!!k&&l.dataset.k===k)});st.classList.toggle('dim',!!k)}
  gs.forEach(function(g){g.addEventListener('pointerenter',function(){hot(g.dataset.k)});g.addEventListener('pointerleave',function(){hot()})});
- ls.forEach(function(l){l.addEventListener('pointerenter',function(){hot(l.dataset.k)});l.addEventListener('pointerleave',function(){hot()})});
+ ls.forEach(function(l){l.addEventListener('pointerenter',function(){hot(l.dataset.k)});l.addEventListener('pointerleave',function(){hot()});var b=l.querySelector('.row');b.addEventListener('click',function(){var o=l.classList.toggle('openr');b.setAttribute('aria-expanded',o)})});
 })();
 
 /* ---------- Galería + lightbox ---------- */
