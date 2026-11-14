@@ -448,6 +448,29 @@ footer a:hover{color:#0a1550}
 .wave .tm{margin-top:4px}
 .open{display:inline-block;margin-top:6px;color:var(--ac);font-size:10px}
 .open:hover{color:#fff}
+.ctrl{gap:10px}
+.ctrl button{width:42px;height:42px}
+.ctrl .play{width:66px;height:66px}
+.ctrl svg{width:19px;height:19px}
+.ctrl .play svg{width:24px;height:24px}
+
+/* ===== flyers en abanico cuadrado (como Lucas), siguen hacia el costado ===== */
+.fl{--cw:clamp(220px,23vw,320px);gap:0;align-items:center;padding:56px var(--gut) 34px;scroll-padding-left:var(--gut)}
+.fl figure{position:relative;flex:none;width:var(--cw);aspect-ratio:1;margin-left:calc(var(--cw) * -.66);border-radius:6px;overflow:hidden;background:#07124a;box-shadow:-14px 0 34px rgba(2,6,40,.45);transition:margin-left .7s cubic-bezier(.2,.7,.2,1),transform .5s,filter .5s;scroll-snap-align:none}
+.fl figure:first-child{margin-left:0}
+.fl figure::before{content:"";position:absolute;inset:-12%;background:var(--bg) center/cover;filter:blur(18px) brightness(.65)}
+.fl figure img{position:relative;width:100%;height:100%;object-fit:contain}
+.fl:hover figure,.fl.open figure{margin-left:18px}
+.fl:hover figure:first-child,.fl.open figure:first-child{margin-left:0}
+.fl figure:hover{transform:translateY(-14px) scale(1.04);z-index:6;filter:none}
+.fl:hover figure:not(:hover){filter:brightness(.6)}
+.fl figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(2,6,40,.92));opacity:0;transition:opacity .3s;color:#fff;font-size:10px;line-height:1.5}
+.fl figure:hover figcaption{opacity:1}
+.fl-hint{margin-top:4px}
+.lb .lbn{top:50%;left:20px;right:auto;transform:translateY(-50%);width:48px;height:48px;padding:0;border-radius:50%;font-size:28px;line-height:1;display:grid;place-items:center;background:rgba(5,10,60,.5)}
+.lb .lbn.r{left:auto;right:20px}
+.lb .lbn[hidden]{display:none}
+.lbc{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#fff;padding:0 70px}
 </style>
 </head>
 <body>
@@ -503,7 +526,7 @@ footer a:hover{color:#0a1550}
 <section class="sec lt" id="sobre">
   <div class="wrap">
     <div class="kick mono rv"><b>01</b> Sobre mí</div>
-    <h2 class="rv">Tocar con<br><em>el alma</em></h2>
+    <h2 class="rv">Tocar con <em>el alma</em></h2>
     <div class="about">
       <div class="pic br rv" id="pic">
         <img class="on" src="img/about-1.jpg" alt="Faustino Larroucau">
@@ -535,7 +558,7 @@ footer a:hover{color:#0a1550}
 <section class="sec music" id="musica">
   <div class="wrap">
     <div class="kick mono rv"><b>02</b> Música</div>
-    <h2 class="rv">Temas<br>&amp; <em>sets</em></h2>
+    <h2 class="rv">Temas &amp; <em>sets</em></h2>
 
     <div class="player br rv" id="player">
       <div class="np">
@@ -562,6 +585,7 @@ footer a:hover{color:#0a1550}
     <div class="filt rv" id="filt">
       <button class="on" data-f="all">Todo</button>
       <button data-f="prod">Temas</button>
+      <button data-f="remix">Remixes</button>
       <button data-f="set">Sets &amp; mixes</button>
     </div>
     <ol class="tracks rv" id="tracks"></ol>
@@ -580,14 +604,14 @@ footer a:hover{color:#0a1550}
     <div class="kick mono rv"><b>03</b> Flyers</div>
     <h2 class="rv">En <em>cabina</em></h2>
   </div>
-  <div class="wrap"><div class="fl" id="fl"></div></div>
+  <div class="wrap"><div class="fl" id="fl"></div><p class="mono fl-hint">Pasá el mouse para abrir · Arrastrá para seguir → · Click para ampliar</p></div>
 </section>
 
 <!-- RIDER -->
 <section class="sec" id="rider">
   <div class="wrap">
     <div class="kick mono rv"><b>04</b> Rider</div>
-    <h2 class="rv">Rider<br><em>técnico</em></h2>
+    <h2 class="rv">Rider <em>técnico</em></h2>
     <div class="rider">
       <div class="stage br rv" id="stage">
         <div class="gear">
@@ -625,7 +649,7 @@ footer a:hover{color:#0a1550}
 <section class="sec lt" id="fotos">
   <div class="wrap">
     <div class="kick mono rv"><b>05</b> Prensa</div>
-    <h2 class="rv">Fotos &amp;<br><em>logo</em></h2>
+    <h2 class="rv">Fotos &amp; <em>logo</em></h2>
     <div class="gal rv" id="gal">
       <figure data-big="img/g1.jpg"><img src="img/g1.jpg" alt="Faustino Larroucau tocando, luces violetas" loading="lazy"><a class="dl" href="descargas/faustino-larroucau-01-club.jpeg" download>↓ Original</a></figure>
       <figure data-big="img/g3.jpg"><img src="img/g3.jpg" alt="Retrato de Faustino Larroucau" loading="lazy"><a class="dl" href="descargas/faustino-larroucau-03-estudio.jpeg" download>↓ Original</a></figure>
@@ -647,7 +671,7 @@ footer a:hover{color:#0a1550}
     </div>
   </div>
 </section>
-<div class="lb" id="lb"><button id="lbx">Cerrar ✕</button><img alt=""></div>
+<div class="lb" id="lb"><button id="lbx">Cerrar ✕</button><button class="lbn" id="lbp" aria-label="Anterior">‹</button><button class="lbn r" id="lbq" aria-label="Siguiente">›</button><img alt=""><div class="lbc mono" id="lbc"></div></div>
 
 <!-- BOOKING -->
 <section class="sec book" id="booking">
@@ -707,7 +731,7 @@ var T=[
  {t:'Tanguito',s:'Original Mix',k:'prod',y:2026,src:'sc',u:'faustinolarroucau/tanguito-faustino-larroucau'},
  {t:'La Lealtad',s:'ft. Pity Alvarez',k:'prod',y:2025,src:'sc',u:'faustinolarroucau/faustino-larroucau-la-lealtad'},
  {t:'DeepMind',s:'Original Mix',k:'prod',y:2024,src:'sc',u:'faustinolarroucau/faustino-larroucau-deepmind'},
- {t:'La Pregunta',s:'Juan Hansen · Faustino Larroucau Edit · Free download',k:'prod',y:2022,src:'sc',u:'faustinolarroucau/lapreguntafaustinolarroucau'},
+ {t:'La Pregunta',s:'Juan Hansen · Faustino Larroucau Edit · Free download',k:'remix',y:2022,src:'sc',u:'faustinolarroucau/lapreguntafaustinolarroucau'},
  {t:'The Main',s:'Club X Crear.Prod set · 2 h 2 min',k:'set',y:2025,src:'sc',u:'faustinolarroucau/faustino-larroucau-the-main'},
  {t:'Quarantine',s:'Mixcloud · 02/04/2020 · 62 min',k:'set',y:2020,src:'mx',u:'/faustino-larroucau/faustino-larroucau-quarantine-02042020/',p:'1/1/6/6/d52b-2bc7-42bb-b7fc-006af63b7c67'},
  {t:'Island Dreamer',s:'Dinámica Underground set · 60 min',k:'set',y:2017,src:'mx',u:'/faustino-larroucau/faustino-larroucau-island-dreamer-dinamicaunderground-set-04-08-2017/',p:'9/2/0/c/7a1a-0b61-4bcf-a15c-93bc7be164c8'},
@@ -795,10 +819,14 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
 
 /* ---------- Galería + lightbox ---------- */
 var lb=$('#lb'),lbi=$('img',lb);
-function openLb(src){lbi.src=src;lb.classList.add('open')}
+var lbList=[],lbIdx=0;
+function showLb(){var it=lbList[lbIdx];lbi.src=it.src;$('#lbc').textContent=(it.title||'')+(it.date?' · '+it.date:'');$('#lbp').hidden=$('#lbq').hidden=lbList.length<2}
+function openLb(src,list,i){lbList=list||[{src:src}];lbIdx=i||0;showLb();lb.classList.add('open')}
+function stepLb(d){if(lbList.length<2)return;lbIdx=(lbIdx+d+lbList.length)%lbList.length;showLb()}
+$('#lbp').addEventListener('click',function(e){e.stopPropagation();stepLb(-1)});$('#lbq').addEventListener('click',function(e){e.stopPropagation();stepLb(1)});
 function closeLb(){lb.classList.remove('open')}
 lb.addEventListener('click',function(e){if(e.target!==lbi)closeLb()});$('#lbx').addEventListener('click',closeLb);
-addEventListener('keydown',function(e){if(e.key==='Escape')closeLb()});
+addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();if(lb.classList.contains('open')){if(e.key==='ArrowLeft')stepLb(-1);if(e.key==='ArrowRight')stepLb(1)}});
 $$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(e.target.closest('.dl'))return;openLb(f.dataset.big)})});
 
 /* ---------- Flyers ---------- */
@@ -806,12 +834,13 @@ $$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(
  if(!FLYERS.length)return;
  $('#flyers').hidden=false;$('#navFl').hidden=false;$('#menuFl').hidden=false;
  var fl=$('#fl');
- fl.innerHTML=FLYERS.map(function(f){return '<figure class="br" data-big="'+f.src+'"><img src="'+f.src+'" alt="'+(f.title||'Flyer')+'" decoding="async" draggable="false">'+((f.title||f.date)?'<figcaption class="mono"><span>'+(f.title||'')+'</span><span>'+(f.date||'')+'</span></figcaption>':'')+'</figure>'}).join('');
+ fl.innerHTML=FLYERS.map(function(f,i){return '<figure data-i="'+i+'" style="--bg:url('+f.src+')"><img src="'+f.src+'" alt="'+(f.title||'Flyer')+'" decoding="async" draggable="false">'+((f.title||f.date)?'<figcaption class="mono"><span>'+(f.title||'')+'</span><span>'+(f.date||'')+'</span></figcaption>':'')+'</figure>'}).join('');
+ if(matchMedia('(hover:none)').matches)fl.classList.add('open');
  var down=false,sx=0,sl=0,moved=0;
  fl.addEventListener('pointerdown',function(e){if(e.pointerType==='touch')return;down=true;moved=0;sx=e.clientX;sl=fl.scrollLeft;fl.classList.add('drag')});
  addEventListener('pointermove',function(e){if(!down)return;moved=Math.abs(e.clientX-sx);fl.scrollLeft=sl-(e.clientX-sx)});
  addEventListener('pointerup',function(){down=false;fl.classList.remove('drag')});
- $$('figure',fl).forEach(function(f){f.addEventListener('click',function(){if(moved<6)openLb(f.dataset.big)})});
+ $$('figure',fl).forEach(function(f){f.addEventListener('click',function(){if(moved<6)openLb(null,FLYERS,+f.dataset.i)})});
 })();
 
 /* ---------- Reproductor ---------- */
@@ -834,7 +863,7 @@ $$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(
  function setPlaying(p){playing=p;ico.innerHTML='<path d="'+(p?PAUSE:PLAY)+'"/>';playB.setAttribute('aria-label',p?'Pausar':'Reproducir');
   $$('li',list).forEach(function(li){var on=li.firstChild.dataset.i==cur;li.classList.toggle('pl',on&&p)})}
 
- function meta(t){var L=$('#npL');if(L)L.href=t.src==='sc'?'https://soundcloud.com/'+t.u:'https://www.mixcloud.com'+t.u;npT.textContent=t.t;npS.textContent=t.s||'';npK.textContent=(t.k==='prod'?'Tema':'Set')+' · '+t.y;
+ function meta(t){var L=$('#npL');if(L)L.href=t.src==='sc'?'https://soundcloud.com/'+t.u:'https://www.mixcloud.com'+t.u;npT.textContent=t.t;npS.textContent=t.s||'';npK.textContent=(t.k==='prod'?'Tema':t.k==='remix'?'Remix':'Set')+' · '+t.y;
   if(t.src==='mx'){cov.src=MXP+t.p;cov.hidden=false}else{cov.hidden=true;cov.removeAttribute('src')}}
 
  function select(i,auto){
