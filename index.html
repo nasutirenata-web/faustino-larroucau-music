@@ -518,6 +518,10 @@ footer a:hover{color:#0a1550}
 .setup li.openr .arr{transform:rotate(45deg)}
 .setup .det{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s ease,opacity .35s,padding .35s;padding:0 4px}
 .setup li.openr .det{max-height:180px;opacity:1;padding:0 4px 20px}
+.setup .row{gap:18px}
+.setup .nm{flex:1;font-size:17px;font-weight:300;color:var(--mut);letter-spacing:.01em;transition:color .35s,font-weight .35s}
+.setup li:hover .nm{color:var(--tx)}
+.setup li.openr .nm{font-weight:700;color:var(--tx)}
 .setup .det b{display:block;font-weight:500;font-size:17px;margin-bottom:2px}
 .setup .det span{display:block;color:var(--mut);font-size:15px;line-height:1.5}
 .warn{display:block;font-family:var(--fb);font-size:15px;font-weight:400;line-height:1.5;letter-spacing:0;text-transform:none}
@@ -651,7 +655,7 @@ footer a:hover{color:#0a1550}
     <div class="kick mono rv"><b>03</b> En vivo</div>
     <h2 class="rv"><em>Flyers</em></h2>
   </div>
-  <div class="wrap"><div class="fl" id="fl"></div><div class="kick mono" id="ptk" style="margin:40px 0 0"><b>·</b> En cabina · fotos y cortos</div><div class="fl" id="pt"></div></div>
+  <div class="wrap"><div class="fl" id="fl"></div><div class="kick mono" id="ptk" style="margin:40px 0 0"><b>·</b> Fotos en cabina</div><div class="fl" id="pt"></div></div>
 </section>
 
 <!-- RIDER -->
@@ -672,9 +676,9 @@ footer a:hover{color:#0a1550}
       </div>
       <div class="rv">
         <ul class="setup" id="setup">
-          <li data-k="mix"><button type="button" class="row" aria-expanded="false"><span class="q">x1</span><span class="arr" aria-hidden="true"></span></button><div class="det"><b>Pioneer DJM900Nxs2</b></div></li>
-          <li data-k="cdj"><button type="button" class="row" aria-expanded="false"><span class="q">x4</span><span class="arr" aria-hidden="true"></span></button><div class="det"><b>Pioneer CDJ2000Nxs2</b><span>(Conectadas en LINK con cable ETHERNET.) o set up superior</span></div></li>
-          <li data-k="mon"><button type="button" class="row" aria-expanded="false"><span class="q">x2+1</span><span class="arr" aria-hidden="true"></span></button><div class="det"><b>High Quality Monitors x2 + Low Subwoofer x1</b><span>(Conectados a la salida BOOTH del Mixer.)</span></div></li>
+          <li data-k="mix"><button type="button" class="row" aria-expanded="false"><span class="q">x1</span><span class="nm">Pioneer DJM900Nxs2</span><span class="arr" aria-hidden="true"></span></button></li>
+          <li data-k="cdj"><button type="button" class="row" aria-expanded="false"><span class="q">x4</span><span class="nm">Pioneer CDJ2000Nxs2</span><span class="arr" aria-hidden="true"></span></button><div class="det"><span>(Conectadas en LINK con cable ETHERNET.) o set up superior</span></div></li>
+          <li data-k="mon"><button type="button" class="row" aria-expanded="false"><span class="q">x2+1</span><span class="nm">High Quality Monitors x2 + Low Subwoofer x1</span><span class="arr" aria-hidden="true"></span></button><div class="det"><span>(Conectados a la salida BOOTH del Mixer.)</span></div></li>
         </ul>
         <div class="warn"><span>IMPORTANTE! Prueba de sonido antes de comenzar el evento</span></div>
       </div>
@@ -711,7 +715,9 @@ footer a:hover{color:#0a1550}
       <figure data-big="img/pk-4.jpg"><img src="img/pk-4.jpg" alt="Faustino Larroucau, retrato" loading="lazy"><a class="dl" href="descargas/presskit-foto-4.jpg" download>↓ Original</a></figure>
     </div>
     <div class="dls rv">
-      <a class="btn" href="descargas/logo-faustino-larroucau-blanco.png" download>↓ Logo PNG (blanco)</a>
+      <a class="btn" href="descargas/logo-faustino-larroucau-blanco.png" download>↓ Logo blanco</a>
+      <a class="btn" href="descargas/logo-faustino-larroucau-negro.png" download>↓ Logo negro</a>
+      <a class="btn" href="descargas/logo-faustino-larroucau-degrade.png" download>↓ Logo azul y naranja</a>
       <a class="btn" href="descargas/presskit-faustino-larroucau.pdf" target="_blank" rel="noopener">Ver presskit PDF ↗</a>
       <a class="btn" href="descargas/presskit-faustino-larroucau.pdf" download>↓ Descargar presskit</a>
     </div>
@@ -771,20 +777,11 @@ var FLYERS=[
 /* En cabina: fotos y cortos de video (forma original) */
 var CABINA=[
   {src:'img/flyers/01x-rio-pineapple-1.jpg',title:'Rio Tokyo · Pine Apple',date:''},
-  {src:'videos/cabina-01.jpg',vid:'videos/cabina-01.mp4',title:'En cabina',date:''},
   {src:'img/flyers/01x-rio-pineapple-2.jpg',title:'Rio Tokyo · Pine Apple',date:''},
-  {src:'videos/cabina-02.jpg',vid:'videos/cabina-02.mp4',title:'En cabina',date:''},
   {src:'img/flyers/01x-rio-pineapple-3.jpg',title:'Rio Tokyo · Pine Apple',date:''},
-  {src:'videos/cabina-03.jpg',vid:'videos/cabina-03.mp4',title:'En cabina',date:''},
   {src:'img/g2.jpg',title:'En cabina',date:''},
-  {src:'videos/cabina-04.jpg',vid:'videos/cabina-04.mp4',title:'En cabina',date:''},
-  {src:'videos/cabina-05.jpg',vid:'videos/cabina-05.mp4',title:'En cabina',date:''},
-  {src:'videos/cabina-06.jpg',vid:'videos/cabina-06.mp4',title:'En cabina',date:''},
-  {src:'videos/cabina-07.jpg',vid:'videos/cabina-07.mp4',title:'En cabina',date:''},
-  {src:'videos/cabina-08.jpg',vid:'videos/cabina-08.mp4',title:'En cabina',date:''},
-  {src:'videos/cabina-09.jpg',vid:'videos/cabina-09.mp4',title:'En cabina',date:''},
-  {src:'videos/cabina-10.jpg',vid:'videos/cabina-10.mp4',title:'En cabina',date:''},
-  {src:'videos/cabina-11.jpg',vid:'videos/cabina-11.mp4',title:'En cabina',date:''}
+  {src:'img/pk-2.jpg',title:'En cabina',date:''},
+  {src:'img/pk-3.jpg',title:'En cabina',date:''}
 ];
 var NAMES=['Gustin','Tonaco','Martín Huergo','JP Sgalia','Mario Puccio','Martín Gardoqui','Fernando Ferreyra','Lisandro','Julián Nates','Ignacio Berardi','Melodiam','Simbad','Lio Q','Pedro D’Alessandro','Mink','Shahar','Tekko','Camila Díaz','Nandu'];
 var GENRES=['Progressive House','Melodic House','Deep House','Indie Dance','Techno'];
