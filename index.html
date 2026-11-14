@@ -268,7 +268,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--ac)}
 .menu a{font-weight:300;text-transform:none;font-size:clamp(44px,12vw,92px)}
 .menu a small{color:var(--ac)}
 /* portada en capas (estilo Miss Monique): logo atrás, figura adelante, todo baja con el scroll */
-.hs{height:185svh;position:relative}
+.hs{height:165svh;position:relative}
 .hh{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;background:radial-gradient(62% 46% at 16% 6%,rgba(34,162,238,.8),transparent 72%),radial-gradient(52% 40% at 90% 16%,rgba(38,148,232,.55),transparent 72%),radial-gradient(72% 46% at 52% 108%,rgba(238,56,34,.9),transparent 72%),radial-gradient(40% 32% at 14% 104%,rgba(255,150,44,.65),transparent 72%),linear-gradient(#060712,#0c0a11)}
 .hh .jer{position:absolute;inset:0;margin:auto;width:min(104svh,104vw);height:auto;max-width:none;opacity:.22;pointer-events:none;will-change:transform}
 .hh .mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.5px) 0 0/8px 8px;-webkit-mask-image:radial-gradient(70% 60% at 50% 45%,#000,transparent 85%);mask-image:radial-gradient(70% 60% at 50% 45%,#000,transparent 85%)}
@@ -475,6 +475,11 @@ footer a:hover{color:#0a1550}
 .hh{background:radial-gradient(75% 52% at 50% -4%,rgba(44,96,238,.6),transparent 76%),radial-gradient(85% 46% at 50% 112%,rgba(255,106,44,.9),transparent 72%),linear-gradient(#071458,#0a2272)}
 .hh .jer{display:none}
 .hh .mesh{-webkit-mask-image:none;mask-image:none;opacity:.9}
+
+/* ===== flyer en su medida original (más grande, sin cuadrar) ===== */
+.fl figure.orig{aspect-ratio:var(--ar);width:auto;height:calc(var(--cw) * 1.6)}
+.fl figure.orig::before{display:none}
+.fl figure.orig img{object-fit:cover}
 
 /* ===== frase final a lo largo ===== */
 .quote{max-width:none;font-size:clamp(22px,2.9vw,44px);line-height:1.12;letter-spacing:.05em}
@@ -734,7 +739,7 @@ var reduce=false;
 /* ---------- DATOS ---------- */
 var FLYERS=[
   // orden: del más nuevo al más viejo
-  {src:'img/flyers/01-rio-tokyo-2026-10.jpg',title:'Rio Tokyo Club',date:'16 Oct 2026'},
+  {src:'img/flyers/01-rio-tokyo-2026-10.jpg',title:'Rio Tokyo Club',date:'16 Oct 2026',r:'788/1400'},
   {src:'img/flyers/02-dema-2026-09.jpg',title:'Dema Club · Facundo Sival',date:'12 Sep 2026'},
   {src:'img/flyers/03-tonaco-2025-12.jpg',title:'Tonaco · Green Cycle',date:'13 Dic 2025'},
   {src:'img/flyers/04-main-club-2025-11.jpg',title:'The Main Club · Vitti Alonsø',date:'1 Nov 2025'},
@@ -800,7 +805,6 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
   var g=Math.round(246-p*110);mk.style.setProperty('--lc','rgb('+g+','+g+','+Math.round(g-(1-p)*3)+')');mk.style.setProperty('--ll','rgba(255,90,36,'+(.45-p*.2).toFixed(2)+')');
   fg.style.transform='translate(calc(-50% + '+(cx*10).toFixed(1)+'px),'+(p*vh*.4+cy*6).toFixed(1)+'px) scale('+(1+p*.05).toFixed(3)+')';
   hin.style.opacity=Math.max(0,1-p*2.2).toFixed(2);hin.style.transform='translateY('+(p*60).toFixed(1)+'px)';
-  hh.style.opacity=p>.78?Math.max(0,1-(p-.78)*4.5).toFixed(2):1;
   if(Math.abs(mx-cx)>.002||Math.abs(my-cy)>.002)req()}
  function req(){if(!busy&&on){busy=true;requestAnimationFrame(paint)}}
  function scroll(){var r=hs.getBoundingClientRect(),tot=hs.offsetHeight-innerHeight;p=Math.min(1,Math.max(0,-r.top/tot));req()}
@@ -858,7 +862,7 @@ $$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(
  if(!FLYERS.length)return;
  $('#flyers').hidden=false;$('#navFl').hidden=false;$('#menuFl').hidden=false;
  var fl=$('#fl');
- fl.innerHTML=FLYERS.map(function(f,i){return '<figure data-i="'+i+'" style="--bg:url('+f.src+')"><img src="'+f.src+'" alt="'+(f.title||'Flyer')+'" decoding="async" draggable="false">'+((f.title||f.date)?'<figcaption class="mono"><span>'+(f.title||'')+'</span><span>'+(f.date||'')+'</span></figcaption>':'')+'</figure>'}).join('');
+ fl.innerHTML=FLYERS.map(function(f,i){return '<figure data-i="'+i+'"'+(f.r?' class="orig" style="--ar:'+f.r+';--bg:url('+f.src+')"':' style="--bg:url('+f.src+')"')+'><img src="'+f.src+'" alt="'+(f.title||'Flyer')+'" decoding="async" draggable="false">'+((f.title||f.date)?'<figcaption class="mono"><span>'+(f.title||'')+'</span><span>'+(f.date||'')+'</span></figcaption>':'')+'</figure>'}).join('');
  if(matchMedia('(hover:none)').matches)fl.classList.add('open');
  var down=false,sx=0,sl=0,moved=0;
  fl.addEventListener('pointerdown',function(e){if(e.pointerType==='touch')return;down=true;moved=0;sx=e.clientX;sl=fl.scrollLeft;fl.classList.add('drag')});
