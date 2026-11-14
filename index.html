@@ -482,10 +482,20 @@ footer a:hover{color:#0a1550}
 .hh .jer{display:none}
 .hh .mesh{-webkit-mask-image:none;mask-image:none;opacity:.9}
 
-/* ===== flyer en su medida original (más grande, sin cuadrar) ===== */
-.fl figure.orig{aspect-ratio:var(--ar);width:auto;height:calc(var(--cw) * 1.6)}
-.fl figure.orig::before{display:none}
-.fl figure.orig img{object-fit:cover}
+/* ===== flyers y cortos en su forma original, sin marcos ===== */
+.fl{--fh:clamp(300px,50vh,460px)}
+.fl figure{aspect-ratio:auto;width:auto;height:var(--fh);margin-left:calc(var(--fh) * -.4)}
+.fl figure:first-child{margin-left:0}
+.fl figure::before{display:none}
+.fl figure img{display:block;width:auto;height:100%;max-width:none;object-fit:cover}
+.fl figure.vid{height:calc(var(--fh) * .72);aspect-ratio:16/9}
+.fl figure.vid img,.fl figure.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fl figure.vid video{opacity:0;transition:opacity .4s}
+.fl figure.vid:hover video{opacity:1}
+.fl figure .pl{position:absolute;right:12px;top:12px;width:30px;height:30px;border-radius:50%;background:rgba(5,10,60,.55);border:1px solid rgba(255,255,255,.5);z-index:2}
+.fl figure .pl::after{content:"";position:absolute;left:11px;top:8px;border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.lb video{max-height:88vh;max-width:92vw;background:#000}
+#pt{align-items:center}
 
 /* ===== frase final a lo largo ===== */
 .quote{max-width:none;font-size:clamp(22px,2.9vw,44px);line-height:1.12;letter-spacing:.05em}
@@ -638,10 +648,10 @@ footer a:hover{color:#0a1550}
 <!-- FLYERS (se muestra solo si hay flyers cargados) -->
 <section class="sec flyers" id="flyers" hidden>
   <div class="wrap">
-    <div class="kick mono rv"><b>03</b> Flyers</div>
-    <h2 class="rv">En <em>cabina</em></h2>
+    <div class="kick mono rv"><b>03</b> En vivo</div>
+    <h2 class="rv"><em>Flyers</em></h2>
   </div>
-  <div class="wrap"><div class="fl" id="fl"></div></div>
+  <div class="wrap"><div class="fl" id="fl"></div><div class="kick mono" id="ptk" style="margin:40px 0 0"><b>·</b> En cabina · fotos y cortos</div><div class="fl" id="pt"></div></div>
 </section>
 
 <!-- RIDER -->
@@ -707,7 +717,7 @@ footer a:hover{color:#0a1550}
     </div>
   </div>
 </section>
-<div class="lb" id="lb"><button id="lbx">Cerrar ✕</button><button class="lbn" id="lbp" aria-label="Anterior">‹</button><button class="lbn r" id="lbq" aria-label="Siguiente">›</button><img alt=""><div class="lbc mono" id="lbc"></div></div>
+<div class="lb" id="lb"><button id="lbx">Cerrar ✕</button><button class="lbn" id="lbp" aria-label="Anterior">‹</button><button class="lbn r" id="lbq" aria-label="Siguiente">›</button><img alt=""><video id="lbv" controls playsinline hidden></video><div class="lbc mono" id="lbc"></div></div>
 
 <!-- BOOKING -->
 <section class="sec book" id="booking">
@@ -744,10 +754,7 @@ var reduce=false;
 /* ---------- DATOS ---------- */
 var FLYERS=[
   // orden: del más nuevo al más viejo
-  {src:'img/flyers/01-rio-tokyo-2026-10.jpg',title:'Rio Tokyo Club',date:'16 Oct 2026',r:'900/1600'},
-  {src:'img/flyers/01x-rio-pineapple-1.jpg',title:'Rio Tokyo · Pine Apple',date:''},
-  {src:'img/flyers/01x-rio-pineapple-2.jpg',title:'Rio Tokyo · Pine Apple',date:''},
-  {src:'img/flyers/01x-rio-pineapple-3.jpg',title:'Rio Tokyo · Pine Apple',date:''},
+  {src:'img/flyers/01-rio-tokyo-2026-10.jpg',title:'Rio Tokyo Club',date:'16 Oct 2026'},
   {src:'img/flyers/02-dema-2026-09.jpg',title:'Dema Club · Facundo Sival',date:'12 Sep 2026'},
   {src:'img/flyers/03-tonaco-2025-12.jpg',title:'Tonaco · Green Cycle',date:'13 Dic 2025'},
   {src:'img/flyers/04-main-club-2025-11.jpg',title:'The Main Club · Vitti Alonsø',date:'1 Nov 2025'},
@@ -760,6 +767,24 @@ var FLYERS=[
   {src:'img/flyers/10-lisandro-2022-12.jpg',title:'Lisandro · Laguna Azul',date:'3 Dic 2022'},
   {src:'img/flyers/11-franco-2022-01.jpg',title:'Franco Armellini · Laguna Azul',date:'22 Ene 2022'},
   {src:'img/flyers/12-techno-time-2017-05.jpg',title:'Techno Time 2',date:'13 May 2017'}
+];
+/* En cabina: fotos y cortos de video (forma original) */
+var CABINA=[
+  {src:'img/flyers/01x-rio-pineapple-1.jpg',title:'Rio Tokyo · Pine Apple',date:''},
+  {src:'videos/cabina-01.jpg',vid:'videos/cabina-01.mp4',title:'En cabina',date:''},
+  {src:'img/flyers/01x-rio-pineapple-2.jpg',title:'Rio Tokyo · Pine Apple',date:''},
+  {src:'videos/cabina-02.jpg',vid:'videos/cabina-02.mp4',title:'En cabina',date:''},
+  {src:'img/flyers/01x-rio-pineapple-3.jpg',title:'Rio Tokyo · Pine Apple',date:''},
+  {src:'videos/cabina-03.jpg',vid:'videos/cabina-03.mp4',title:'En cabina',date:''},
+  {src:'img/g2.jpg',title:'En cabina',date:''},
+  {src:'videos/cabina-04.jpg',vid:'videos/cabina-04.mp4',title:'En cabina',date:''},
+  {src:'videos/cabina-05.jpg',vid:'videos/cabina-05.mp4',title:'En cabina',date:''},
+  {src:'videos/cabina-06.jpg',vid:'videos/cabina-06.mp4',title:'En cabina',date:''},
+  {src:'videos/cabina-07.jpg',vid:'videos/cabina-07.mp4',title:'En cabina',date:''},
+  {src:'videos/cabina-08.jpg',vid:'videos/cabina-08.mp4',title:'En cabina',date:''},
+  {src:'videos/cabina-09.jpg',vid:'videos/cabina-09.mp4',title:'En cabina',date:''},
+  {src:'videos/cabina-10.jpg',vid:'videos/cabina-10.mp4',title:'En cabina',date:''},
+  {src:'videos/cabina-11.jpg',vid:'videos/cabina-11.mp4',title:'En cabina',date:''}
 ];
 var NAMES=['Gustin','Tonaco','Martín Huergo','JP Sgalia','Mario Puccio','Martín Gardoqui','Fernando Ferreyra','Lisandro','Julián Nates','Ignacio Berardi','Melodiam','Simbad','Lio Q','Pedro D’Alessandro','Mink','Shahar','Tekko','Camila Díaz','Nandu'];
 var GENRES=['Progressive House','Melodic House','Deep House','Indie Dance','Techno'];
@@ -834,7 +859,7 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
  if(!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
  var f=$('#focus'),x=-50,y=-50,w=30,h=30,tx=0,ty=0,tw=30,th=30,tgt=null,on=false;
  addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;if(!on){on=true;f.classList.add('on');tx=x-15;ty=y-15;frame()}
-  var el=e.target.closest&&e.target.closest('a,button,[data-focus],.gal figure,.fl figure');tgt=el});
+  var el=e.target.closest&&e.target.closest('a,button,[data-focus]');tgt=el});
  document.addEventListener('pointerleave',function(){f.classList.remove('on');on=false});
  function frame(){
   if(tgt){var r=tgt.getBoundingClientRect();if(r.width<700&&r.height<260){tx=r.left-6;ty=r.top-6;tw=r.width+12;th=r.height+12}else{tx=x-15;ty=y-15;tw=30;th=30}}
@@ -856,12 +881,12 @@ $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.clas
 /* ---------- Galería + lightbox ---------- */
 var lb=$('#lb'),lbi=$('img',lb);
 var lbList=[],lbIdx=0;
-function showLb(){var it=lbList[lbIdx];lbi.src=it.src;$('#lbc').textContent=(it.title||'')+(it.date?' · '+it.date:'');$('#lbp').hidden=$('#lbq').hidden=lbList.length<2}
+function showLb(){var it=lbList[lbIdx],lv=$('#lbv');if(it.vid){lbi.hidden=true;lv.hidden=false;lv.src=it.vid;lv.muted=false;lv.play().catch(function(){})}else{lv.pause();lv.hidden=true;lbi.hidden=false;lbi.src=it.src}$('#lbc').textContent=(it.title||'')+(it.date?' · '+it.date:'');$('#lbp').hidden=$('#lbq').hidden=lbList.length<2}
 function openLb(src,list,i){lbList=list||[{src:src}];lbIdx=i||0;showLb();lb.classList.add('open')}
 function stepLb(d){if(lbList.length<2)return;lbIdx=(lbIdx+d+lbList.length)%lbList.length;showLb()}
 $('#lbp').addEventListener('click',function(e){e.stopPropagation();stepLb(-1)});$('#lbq').addEventListener('click',function(e){e.stopPropagation();stepLb(1)});
-function closeLb(){lb.classList.remove('open')}
-lb.addEventListener('click',function(e){if(e.target!==lbi)closeLb()});$('#lbx').addEventListener('click',closeLb);
+function closeLb(){lb.classList.remove('open');var lv=$('#lbv');lv.pause()}
+lb.addEventListener('click',function(e){if(e.target!==lbi&&e.target!==$('#lbv'))closeLb()});$('#lbx').addEventListener('click',closeLb);
 addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();if(lb.classList.contains('open')){if(e.key==='ArrowLeft')stepLb(-1);if(e.key==='ArrowRight')stepLb(1)}});
 $$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(e.target.closest('.dl'))return;openLb(f.dataset.big)})});
 
@@ -869,14 +894,20 @@ $$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(
 (function(){
  if(!FLYERS.length)return;
  $('#flyers').hidden=false;$('#navFl').hidden=false;$('#menuFl').hidden=false;
- var fl=$('#fl');
- fl.innerHTML=FLYERS.map(function(f,i){return '<figure data-i="'+i+'"'+(f.r?' class="orig" style="--ar:'+f.r+';--bg:url('+f.src+')"':' style="--bg:url('+f.src+')"')+'><img src="'+f.src+'" alt="'+(f.title||'Flyer')+'" decoding="async" draggable="false">'+((f.title||f.date)?'<figcaption class="mono"><span>'+(f.title||'')+'</span><span>'+(f.date||'')+'</span></figcaption>':'')+'</figure>'}).join('');
- if(matchMedia('(hover:none)').matches)fl.classList.add('open');
- var down=false,sx=0,sl=0,moved=0;
- fl.addEventListener('pointerdown',function(e){if(e.pointerType==='touch')return;down=true;moved=0;sx=e.clientX;sl=fl.scrollLeft;fl.classList.add('drag')});
- addEventListener('pointermove',function(e){if(!down)return;moved=Math.abs(e.clientX-sx);fl.scrollLeft=sl-(e.clientX-sx)});
- addEventListener('pointerup',function(){down=false;fl.classList.remove('drag')});
- $$('figure',fl).forEach(function(f){f.addEventListener('click',function(){if(moved<6)openLb(null,FLYERS,+f.dataset.i)})});
+ function strip(el,list){
+  el.innerHTML=list.map(function(f,i){return '<figure data-i="'+i+'"'+(f.vid?' class="vid"':'')+'><img src="'+f.src+'" alt="'+(f.title||'')+'" decoding="async" draggable="false">'+(f.vid?'<video muted loop playsinline preload="none" data-src="'+f.vid+'"></video><i class="pl" aria-hidden="true"></i>':'')+((f.title||f.date)?'<figcaption class="mono"><span>'+(f.title||'')+'</span><span>'+(f.date||'')+'</span></figcaption>':'')+'</figure>'}).join('');
+  if(matchMedia('(hover:none)').matches)el.classList.add('open');
+  var down=false,sx=0,sl=0,moved=0;
+  el.addEventListener('pointerdown',function(e){if(e.pointerType==='touch')return;down=true;moved=0;sx=e.clientX;sl=el.scrollLeft;el.classList.add('drag')});
+  addEventListener('pointermove',function(e){if(!down)return;moved=Math.abs(e.clientX-sx);el.scrollLeft=sl-(e.clientX-sx)});
+  addEventListener('pointerup',function(){down=false;el.classList.remove('drag')});
+  $$('figure',el).forEach(function(f){
+   f.addEventListener('click',function(){if(moved<6)openLb(null,list,+f.dataset.i)});
+   var v=f.querySelector('video');
+   if(v){f.addEventListener('pointerenter',function(){if(!v.src)v.src=v.dataset.src;v.play().catch(function(){})});f.addEventListener('pointerleave',function(){v.pause()})}
+  });
+ }
+ strip($('#fl'),FLYERS);strip($('#pt'),CABINA);
 })();
 
 /* ---------- Reproductor ---------- */
