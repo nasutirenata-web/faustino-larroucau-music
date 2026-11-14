@@ -430,6 +430,24 @@ footer .mono,footer a{color:#fff}
 footer a:hover{color:#0a1550}
 .book .ct li a:hover{color:#fff}
 .book .kick b{color:#fff}
+
+/* ===== reproductor más fino ===== */
+.player{padding:clamp(14px,2vw,22px);border-color:rgba(239,236,232,.1);margin-top:36px}
+.player.br{--bs:12px}
+.player.br:hover{--bs:18px}
+.np{gap:clamp(12px,2vw,22px)}
+.cover{width:clamp(60px,7.5vw,96px)}
+.np h3{font-size:clamp(24px,3vw,40px);margin:4px 0 2px}
+.np .sub{font-size:13px}
+.ctrl{gap:8px}
+.ctrl button{width:36px;height:36px}
+.ctrl .play{width:52px;height:52px}
+.ctrl svg{width:16px;height:16px}
+.wave{margin-top:14px}
+.wave canvas{height:64px}
+.wave .tm{margin-top:4px}
+.open{display:inline-block;margin-top:6px;color:var(--ac);font-size:10px}
+.open:hover{color:#fff}
 </style>
 </head>
 <body>
@@ -526,6 +544,7 @@ footer a:hover{color:#0a1550}
           <span class="mono" id="npK">Producción</span>
           <h3 id="npT">Cargando…</h3>
           <div class="sub" id="npS"></div>
+          <a class="open mono" id="npL" target="_blank" rel="noopener">Abrir completo ↗</a>
         </div>
         <div class="ctrl">
           <button id="prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
@@ -689,9 +708,7 @@ var T=[
  {t:'La Lealtad',s:'ft. Pity Alvarez',k:'prod',y:2025,src:'sc',u:'faustinolarroucau/faustino-larroucau-la-lealtad'},
  {t:'DeepMind',s:'Original Mix',k:'prod',y:2024,src:'sc',u:'faustinolarroucau/faustino-larroucau-deepmind'},
  {t:'La Pregunta',s:'Juan Hansen · Faustino Larroucau Edit · Free download',k:'prod',y:2022,src:'sc',u:'faustinolarroucau/lapreguntafaustinolarroucau'},
- {t:'Acid Dementia',s:'',k:'prod',y:2014,src:'sc',u:'faustinolarroucau/acid-dementia'},
- {t:'Caroline',s:'',k:'prod',y:2014,src:'sc',u:'faustinolarroucau/caroline'},
- {t:'The Main',s:'Club X Crear.Prod set',k:'set',y:2025,src:'sc',u:'faustinolarroucau/faustino-larroucau-the-main'},
+ {t:'The Main',s:'Club X Crear.Prod set · 2 h 2 min',k:'set',y:2025,src:'sc',u:'faustinolarroucau/faustino-larroucau-the-main'},
  {t:'Quarantine',s:'Mixcloud · 02/04/2020 · 62 min',k:'set',y:2020,src:'mx',u:'/faustino-larroucau/faustino-larroucau-quarantine-02042020/',p:'1/1/6/6/d52b-2bc7-42bb-b7fc-006af63b7c67'},
  {t:'Island Dreamer',s:'Dinámica Underground set · 60 min',k:'set',y:2017,src:'mx',u:'/faustino-larroucau/faustino-larroucau-island-dreamer-dinamicaunderground-set-04-08-2017/',p:'9/2/0/c/7a1a-0b61-4bcf-a15c-93bc7be164c8'},
  {t:'Bohemian Set',s:'Mixcloud · 64 min',k:'set',y:2017,src:'mx',u:'/faustino-larroucau/faustino-larroucau-bohemian-set-23-05-2017/',p:'0/e/2/9/7e38-47f7-4453-9bad-da42dc179aab'},
@@ -700,7 +717,9 @@ var T=[
  {t:'Black Spirit Mix',s:'Mixcloud · 23 min',k:'set',y:2016,src:'mx',u:'/faustino-larroucau/faustino-larroucau-black-spirit-mix/',p:'5/1/8/9/96fe-bd51-478e-80cd-505095879d12'},
  {t:'Small Black Centaur',s:'Mixcloud · 24 min',k:'set',y:2015,src:'mx',u:'/faustino-larroucau/small-black-centaur/',p:'6/4/4/8/32e9-76bb-4bc5-9900-a75892dfe919.jpg'},
  {t:'Lost in America',s:'F.L & M.T.F · Set live',k:'set',y:2014,src:'sc',u:'faustinolarroucau/lost-in-america-fl-mtf-set-liveoriginal-mix'},
- {t:'Cereal Mix',s:'',k:'set',y:2014,src:'sc',u:'faustinolarroucau/cereal-mix'}
+ {t:'Caroline',s:'Mix · 30 min',k:'set',y:2014,src:'sc',u:'faustinolarroucau/caroline'},
+ {t:'Acid Dementia',s:'Mix · 22 min',k:'set',y:2014,src:'sc',u:'faustinolarroucau/acid-dementia'},
+ {t:'Cereal Mix',s:'Mix · 21 min',k:'set',y:2014,src:'sc',u:'faustinolarroucau/cereal-mix'}
 ];
 
 /* ---------- Reveal ---------- */
@@ -815,7 +834,7 @@ $$('#gal figure').forEach(function(f){f.addEventListener('click',function(e){if(
  function setPlaying(p){playing=p;ico.innerHTML='<path d="'+(p?PAUSE:PLAY)+'"/>';playB.setAttribute('aria-label',p?'Pausar':'Reproducir');
   $$('li',list).forEach(function(li){var on=li.firstChild.dataset.i==cur;li.classList.toggle('pl',on&&p)})}
 
- function meta(t){npT.textContent=t.t;npS.textContent=t.s||'';npK.textContent=(t.k==='prod'?'Tema':'Set')+' · '+t.y;
+ function meta(t){var L=$('#npL');if(L)L.href=t.src==='sc'?'https://soundcloud.com/'+t.u:'https://www.mixcloud.com'+t.u;npT.textContent=t.t;npS.textContent=t.s||'';npK.textContent=(t.k==='prod'?'Tema':'Set')+' · '+t.y;
   if(t.src==='mx'){cov.src=MXP+t.p;cov.hidden=false}else{cov.hidden=true;cov.removeAttribute('src')}}
 
  function select(i,auto){
